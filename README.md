@@ -1,4 +1,133 @@
+# PetPicker
+
+Pet Picker is a single page app that allows a user to browse pets that are available for adoption.  Upon loggin in, a user will create their profile settings.  A user can be an owner with a single pet avaialable for adoption or a user can be an adopter.  An adopter can filter based on pet criteria.  If an adopter and an owner both "favorite" each other, the owner is able to message the adopter.
+
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+Be sure you have node.
+```
+node -v
+```
+If you do not have node, visit [Node.js](https://nodejs.org/en/) in order to download it and npm.  Then update your npm by running
+
+```
+npm install npm@latest -g
+```
+
+Be sure you have npm.
+```
+npm -v
+```
+
+
+### Installing
+
+Clone down the repository at https://github.com/tmcjunkinmarquis/PetPicker.
+
+From the terminal run each of the following commands:
+
+```
+git clone <paste the path here>
+cd pet-picker-app
+npm install
+npm start
+```
+'npm start' runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+For the project to build, **these files must exist with exact filenames**:
+
+* `public/index.html` is the page template;
+* `src/index.js` is the JavaScript entry point.
+
+```
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+```
+
+You can delete or rename the other files.
+
+You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
+You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+A step by step series of examples that tell you have to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+* [JavaScript](https://www.javascript.com/) - Programming language
+* [React](https://reactjs.org/) - JavaScript library
+
+
+## Authors
+
+* **Steve Schwedt** - *Initial work* - [Github](https://github.com/apoc64)
+* **Theresa Marquis** - *Initial work* - [Github](https://github.com/tmcjunkinmarquis)
+* **Tyler Westlie** - *Initial work* - [Github](https://github.com/tywestlie)
+
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
+
+
+
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
