@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import Button from '../../stateless_components/Button/Button';
+import NopeButton from '../../stateless_components/NopeButton/NopeButton';
+import LikeButton from '../../stateless_components/LikeButton/LikeButton';
 import { fetchUsers } from '../../api_calls/api-calls'
+import PetImage from '../../stateless_components/PetImage/PetImage'
+import PetDescription from '../../stateless_components/PetDescription/PetDescription'
+import './Welcome.css'
 
 class Welcome extends Component {
   constructor(props) {
@@ -18,8 +22,14 @@ class Welcome extends Component {
   render() {
     return (
       <div>
-        <h1>I am the Welcome Page. Welcome to Pet Picker!</h1>
-        <Button handleClick={this.handleClick} />
+        <h1>Welcome to Pet Picker!</h1>
+        <PetImage />
+        <div className="nope-or-like">
+          <NopeButton handleClick={this.handleClick} />
+          <LikeButton handleClick={this.handleClick} />
+        </div>
+        
+        <PetDescription />
       </div>
     )
   }
