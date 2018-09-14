@@ -6,7 +6,9 @@ const PetImage = (props) => {
 
   const petUrl = props.pet.pic;
   return (
-    <img src={petUrl}></img>
+    <div className={props.display}>
+      <img src={petUrl}></img>
+    </div>
   );
 };
 

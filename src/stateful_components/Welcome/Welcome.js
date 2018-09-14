@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import NopeButton from '../../stateless_components/NopeButton/NopeButton';
 import LikeButton from '../../stateless_components/LikeButton/LikeButton';
-import { fetchUsers, fetchPets } from '../../api_calls/api-calls'
-import PetsContainer from '../../stateless_components/PetsContainer/PetsContainer'
-import PetDescription from '../../stateless_components/PetDescription/PetDescription'
-import './Welcome.css'
+import { fetchUsers, fetchPets } from '../../api_calls/api-calls';
+import PetsContainer from '../../stateless_components/PetsContainer/PetsContainer';
+import PetDescription from '../../stateless_components/PetDescription/PetDescription';
+import './Welcome.css';
 
 class Welcome extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       petsArray:[],
-      loggedIn: false
-    }
+      loggedIn: true
+    };
   }
 
-  handleClick = async () => {
-    try {
-      await fetchUsers()
-    } catch (error) {
-    }
+  handleNopeClick = () => {
+    console.log('howdy');
+    
   }
 
   loadAllPets =  async ()=>{
-    const petsArray = await fetchPets()
-    this.setState({petsArray}) 
+    const petsArray = await fetchPets();
+    this.setState({petsArray}); 
     
   }
     
   async componentDidMount(){
-    await this.loadAllPets()
+    await this.loadAllPets();
   }
 
   render() {
@@ -43,13 +41,13 @@ class Welcome extends Component {
         />
         
         <div className="nope-or-like">
-          <NopeButton handleClick={this.handleNopeClick} />
-          <LikeButton handleClick={this.handleLikeClick} />
+          <NopeButton handleNopeClick={this.handleNopeClick} />
+          <LikeButton handleLikeClick={this.handleLikeClick} />
         </div>
         
         <PetDescription />
       </div>
-    )
+    );
   }
 }
 
