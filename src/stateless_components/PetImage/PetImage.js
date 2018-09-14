@@ -3,13 +3,9 @@ import './PetImage.css'
 
 const PetImage = (props) => {
 
-
+  const petUrl = props.pet.pic;
   return (
-    
-
-    <img ></img>
-
-
+    <img src={petUrl}></img>
   )
 }
 

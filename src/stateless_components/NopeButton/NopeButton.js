@@ -6,7 +6,7 @@ const NopeButton = (props) => {
 
   return(
     
-    <button class="button-xlarge pure-button">Nope</button>
+    <button className="button-xlarge pure-button">Nope</button>
     
     
   )

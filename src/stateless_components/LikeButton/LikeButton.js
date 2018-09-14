@@ -6,7 +6,7 @@ const LikeButton = (props) => {
 
   return (
 
-    <button class="button-xlarge pure-button">Like</button>
+    <button className="button-xlarge pure-button">Like</button>
 
 
   )
