@@ -2,7 +2,6 @@
   "name": "pet-picker-app",
   "version": "0.1.0",
   "private": true,
-  "heroku-postbuild": "npm install && npm run build",
   "dependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
