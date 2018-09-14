@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '9'
+install:
+- npm install
+- npm run build
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: Eh/CpDt5pW7dOWL4B5Mqs1cU8AphAWTUqRpjC1uMe//BzeGpMETx6IfN3W2WiFPNxH1TE89H8felevSe3AE6xC0IiamexsM+53I5yiD+DIgYwLo7wPdK4JxUQk53tcndL4YO/vkQ4AS9bHMRNvReodYD44j6zYhdjvFAN0Rjo6SKqRhncZUDPC50BzaF0EmFb4vcOGukknr8b+XGyIP8NMr9l5Xoeo4rv6F6wk/gFWdtDWWlbq/v1mDgY9YTbcNCtTqIHLyBgNa1dyEtr6gI+SR1z+oUB7NWnbsP4QTnE+g4XUjWAZWsF54ptY1g9CfIRAwX3Cik5Tvxn9ASxFtWgvyKZEKNYxo2qDtTn8g0A7oLE14otBi4ZVHlDrjnpfpA2/LGAhnXRkBm7rnJ40Ib1Pq9iHu0VjgCA+7Yp1sJ8wQdEeP3BmXU02m1SjPUiCxClV+A/B6CeO85Eujm9Lb7ZIa7CJ+NSpUX3b/gOcHBVFKkyUtHqCz0EnBkYxUt+dOGezy7Rth8OpJ75kh023tBw6CeS8dLdFOAWV3/o5NpSCkT8gevVV0SuD9HSZe4ZCm/lAguJ44fmXe6X0XMcMJTUCP8p7aTynloZqOk0Lp+gN4llzgLW/AWS96cPweOLk860DfIMKvM/QyjMO63PIcr6cASACQ+JNNSAbJ9YhqJKnk=
+  app: PetPicker
+  skip_cleanup: true
