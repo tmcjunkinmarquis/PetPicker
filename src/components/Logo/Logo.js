@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Logo.css'
+import './Logo.css';
 
 const Logo = (props) => {
 
@@ -9,7 +9,7 @@ const Logo = (props) => {
     <h1>PetPicker</h1>
 
 
-  )
-}
+  );
+};
 
 export default Logo;
