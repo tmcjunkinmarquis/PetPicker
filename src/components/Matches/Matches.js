@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import './Matches.css';
+import IndividualMatch from '../IndividualMatch/IndividualMatch';
 
-export class Matches extends Component {
+class Matches extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      matches: [{username: 'Betty', status: 'owner', petUrl: 'www.getUrl.com' }, {username: 'Bubba', status: 'owner', petUrl: 'www.getAnotherUrl.com' }]
+      matches: [
+        { username: 'Betty', status: 'owner', petUrl: 'www.getUrl.com' },
+        { username: 'Bubba', status: 'owner', petUrl: 'www.getAnotherUrl.com' }
+      ]
     };
   }
 
@@ -22,24 +25,34 @@ export class Matches extends Component {
     });
   };
 
-  makeIndividualMatch= () => {
-    console.log('I am an indivdual match')
-
+  makeIndividualMatch = () => {
+    console.log(this.state);
+    return this.state.matches.map((match, idx) => {
+      return (
+        <IndividualMatch
+          key={idx}
+          match={match}
+        />
+      );
+    });
   }
+
+
+
 
 
 
   getMatches = () => {
-    console.log('I am a match fetch eventually' );
+    console.log('I am a match fetch eventually');
     //import getMatches from apiCalls
     //send array of matches to setState in this component
-    
-    
+
+
   }
 
-  
 
-  componentDidMount(){
+
+  componentDidMount() {
     this.getMatches();
   }
 
@@ -63,7 +76,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 Matches.propTypes = {
-  
+
   history: PropTypes.object.isRequired
 };
 
