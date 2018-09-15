@@ -8,7 +8,6 @@ import IndividualMatch from '../IndividualMatch/IndividualMatch';
 class Matches extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       matches: [
         { username: 'Betty', status: 'owner', petUrl: 'www.getUrl.com' },
@@ -19,7 +18,6 @@ class Matches extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
@@ -38,19 +36,11 @@ class Matches extends Component {
   }
 
 
-
-
-
-
   getMatches = () => {
     console.log('I am a match fetch eventually');
     //import getMatches from apiCalls
     //send array of matches to setState in this component
-
-
   }
-
-
 
   componentDidMount() {
     this.getMatches();
