@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+// import { Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
+import { fetchUserData, fetchSignUp } from '../../api_calls/api-calls';
 
 export class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      newUsername: '',
+      newPassword: '',
+      role: '',
+      description: '',
+      pic: ''
     };
   }
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
@@ -25,51 +30,141 @@ export class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    // const userData = await fetchUserData();
-    // const foundUser = userData.data.find(
-    //   user => user.username === this.state.username.toLowerCase()
-    // );
 
     if (this.state.username === "") {
       alert('Please enter a username');
-      // } else if (!foundUser) {
-      //   alert('No such user');
-      // } else if (foundUser.password === this.state.password) {
     } else if (this.state.password === "") {
       alert('Please enter a password');
     }
     else {
+      const userData = await fetchUserData(this.state.username, this.state.password);
+      console.log(userData)
       this.props.toggleLoggedIn();
-      this.props.storeUser(this.state.username);
-      this.props.history.push('/');
+      this.props.storeUser(userData);
+      this.props.history.push('/Pets');
+
       // } else {
       //   alert('Incorrect Password');
     }
   };
 
+  handleSignUpSubmit = async (event) => {
+    event.preventDefault();
+    if (this.state.newUsername === "") {
+      alert('Please enter a username');
+    } else if (this.state.newUserPassword === "") {
+      alert('Please enter a password');
+    } else if (this.state.role === "") {
+      alert('Please enter a role');
+    } else if (this.state.description === "") {
+      alert('Please enter a description');
+    } else if (this.state.url === "") {
+      alert('Please enter a url path to an image');
+    } else {
+      const newUserData = await fetchSignUp(
+        this.state.newUsername,
+        this.state.newPassword,
+        this.state.role,
+        this.state.description,
+        this.state.pic
+      );
+      console.log('newUserData: ', newUserData)
+      this.props.toggleLoggedIn();
+      this.props.storeUser(newUserData);
+      this.props.history.push('/Pets');
+    }
+  }
+
   render() {
     return (
-      <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-            className="inputField"
-          />
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            className="inputField"
-          />
-          <button className="loginButton" />
-        </form>
-      </div>
+      <div className="login-signup-wrapper">
+        <section className="login">
+          <h1>Login</h1>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <button
+              name="submit"
+              type="submit"
+              className="loginButton"
+            >Login</button>
+          </form>
+        </section>
+        <section className="sign-up">
+          <h1>Sign Up</h1>
+          <form
+            className="sign-up-form"
+            onSubmit={this.handleSignUpSubmit}>
+            <input
+              type="text"
+              placeholder="Choose Username"
+              name="newUsername"
+              value={this.state.newUsername}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <input
+              type="password"
+              placeholder="Choose Password"
+              name="newPassword"
+              value={this.state.newPassword}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <fieldset>
+              <legend>Choose Your Role</legend>
+              <ul>
+                <li>
+                  <label htmlFor="owner">
+                    Owner:
+                  <input type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
+                  </label>
+                </li>
+                <li>
+                  <label htmlFor="adopter">
+                    Adopter:
+                  <input type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange} />
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <input
+              placeholder="Enter Description"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <input
+              type="url"
+              placeholder="Enter URL to image"
+              name="pic"
+              value={this.state.pic}
+              onChange={this.handleChange}
+              className="inputField"
+            />
+            <button
+              name="submit"
+              type="submit"
+              className="signinButton"
+            >Sign In</button>
+          </form>
+        </section>
+      </div >
     );
   }
 }
@@ -79,12 +174,12 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   toggleLoggedIn: () => dispatch(toggleLoggedIn()),
-  storeUser: user => dispatch(storeUser(user)),
+  storeUser: user => dispatch(storeUser(user))
 });
 
 Login.propTypes = {
-  // toggleLoggedIn: PropTypes.bool.isRequired,
-  // storeUser: PropTypes.func.isRequired,
+  toggleLoggedIn: PropTypes.func.isRequired,
+  storeUser: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
 

@@ -1,21 +1,17 @@
 export const loggedIn = (state = false, action) => {
   switch (action.type) {
     case 'TOGGLE_LOGGEDIN':
-      return {
-        loggedIn: !state.loggedIn
-      };
+      return !state.loggedIn;
     default:
       return state;
   }
 };
 
-export const user = (state = { username: '' }, action) => {
+export const user = (state = {}, action) => {
   switch (action.type) {
     case 'STORE_USER':
-      return {
-        ...state,
-        username: action.username,
-      };
+      console.log(action.userObj);
+      return action.userObj
     default:
       return state;
   }
