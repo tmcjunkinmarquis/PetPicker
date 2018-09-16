@@ -73,7 +73,7 @@ const fetchSignIn = async (username, password, description, pic) => {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
     },
-    body: JSON.stringify({ user: username, password })
+    body: JSON.stringify({ user: username, password, description, pic })
   };
   try {
     const response = await fetch(url, optionsObj);

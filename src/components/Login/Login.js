@@ -15,9 +15,9 @@ export class Login extends Component {
       password: '',
       newUsername: '',
       newUserPassword: '',
-      newStatus: '',
-      newDescription: '',
-      newPic: ''
+      status: '',
+      description: '',
+      pic: ''
     };
   }
 
@@ -38,7 +38,7 @@ export class Login extends Component {
     }
     else {
       const userData = await fetchUserData(this.state.username, this.state.password);
-
+      console.log(userData)
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
       // this.props.history.push('/Pets');
@@ -59,7 +59,14 @@ export class Login extends Component {
     } else if (this.state.url === "") {
       alert('Please enter a url path to an image');
     } else {
-      const newUserData = await fetchSignIn(this.state.username, this.state.password, this.state.description, this.state.pic);
+      const newUserData = await fetchSignIn(
+        this.state.username,
+        this.state.password,
+        this.state.description,
+        this.state.pic
+      );
+      this.props.toggleLoggedIn();
+      this.props.storeUser(newUserData);
     }
 
 
@@ -86,7 +93,6 @@ export class Login extends Component {
             onChange={this.handleChange}
             className="inputField"
           />
-
           <button
             name="submit"
             type="submit"
@@ -101,7 +107,7 @@ export class Login extends Component {
             type="text"
             placeholder="Choose Username"
             name="newUsername"
-            value={this.state.username}
+            value={this.state.newUsername}
             onChange={this.handleChange}
             className="inputField"
           />
@@ -109,12 +115,12 @@ export class Login extends Component {
             type="password"
             placeholder="Choose Password"
             name="newUserPassword"
-            value={this.state.password}
+            value={this.state.newPassword}
             onChange={this.handleChange}
             className="inputField"
           />
           <fieldset>
-            <legend>Profile</legend>
+            <legend>Choose One</legend>
             <ul>
               <li>
                 <label htmlFor="owner">
@@ -132,13 +138,13 @@ export class Login extends Component {
           </fieldset>
           <input
             placeholder="Enter Description"
-            name="newDescription"
+            name="description"
             value={this.state.description}
             onChange={this.handleChange}
             className="inputField"
           />
           <input
-            type="newUrl"
+            type="url"
             placeholder="Enter URL to image"
             name="pic"
             value={this.state.pic}
@@ -146,7 +152,7 @@ export class Login extends Component {
             className="inputField"
           />
           <button
-            name="newSubmit"
+            name="submit"
             type="submit"
             className="signinButton"
           >Sign In</button>
