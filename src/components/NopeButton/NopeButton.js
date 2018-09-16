@@ -1,22 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './NopeButton.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const NopeButton = (props) => {
+
+export const NopeButton = (props) => {
+
+  const handleNopeClick = () => {
+    console.log('howdy');
+    // fetchDeletePet(userId, pet_id)
+  }
 
   return (
 
     <button
       className="button-xlarge pure-button"
-      onClick={props.handleNopeClick}
+      onClick={handleNopeClick}
     >Nope
     </button>
 
   );
 };
 
-export default NopeButton;
+export const mapStateToProps = state => ({
+});
+
+export const mapDispatchToProps = dispatch => ({
+});
 
 NopeButton.propTypes = {
   handleNopeClick: PropTypes.func
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(NopeButton);

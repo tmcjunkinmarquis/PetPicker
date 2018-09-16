@@ -10,7 +10,6 @@ export const loggedIn = (state = false, action) => {
 export const user = (state = {}, action) => {
   switch (action.type) {
     case 'STORE_USER':
-      console.log(action.userObj);
       return action.userObj
     default:
       return state;

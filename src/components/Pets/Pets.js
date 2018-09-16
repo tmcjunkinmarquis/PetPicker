@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NopeButton from '../NopeButton/NopeButton';
 import LikeButton from '../LikeButton/LikeButton';
-import { fetchPets } from '../../api_calls/api-calls';
+import { fetchPets, fetchDeletePet, fetchLikePostPet } from '../../api_calls/api-calls';
 import PetsContainer from '../PetsContainer/PetsContainer';
 import PetDescription from '../PetDescription/PetDescription';
 import './Pets.css';
 import PropTypes from 'prop-types';
+
 
 export class Pets extends Component {
   constructor(props) {
@@ -17,9 +18,9 @@ export class Pets extends Component {
     };
   }
 
-  handleNopeClick = () => {
-    console.log('howdy');
-    // toggle
+  handleLikeClick = () => {
+    console.log('howdy like');
+    // fetchLikePostPet(userId, pet_id)
   }
 
   loadAllPets = async () => {
@@ -29,7 +30,11 @@ export class Pets extends Component {
   }
 
   async componentDidMount() {
-    await this.loadAllPets();
+    if (this.props.loggedIn) {
+      await this.loadAllPets();
+    } else {
+      this.props.history.push('/');
+    }
   }
 
   render() {
@@ -37,16 +42,12 @@ export class Pets extends Component {
       <div>
         <h1>Pets to Pet Picker!</h1>
 
-        <PetsContainer
-          petsArray={this.state.petsArray}
-          loggedIn={this.state.loggedIn}
-        />
+        {this.state.petsArray.length &&
+          <img src={this.state.petsArray[0].pic} alt="pic" />}
 
         <div className="nope-or-like">
-          <NopeButton handleNopeClick={this.handleNopeClick} />
-          <LikeButton handleLikeClick={this.handleLikeClick} />
+          <NopeButton />
         </div>
-
         <PetDescription />
       </div>
     );
@@ -54,6 +55,7 @@ export class Pets extends Component {
 }
 
 export const mapStateToProps = state => ({
+  loggedIn: state.loggedIn,
   userId: state.user.id
 });
 
@@ -61,7 +63,9 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 Pets.propTypes = {
-  userId: PropTypes.number
+  loggedIn: PropTypes.bool.isRequired,
+  userId: PropTypes.number,
+  history: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pets);

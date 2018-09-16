@@ -13,12 +13,9 @@ class Welcome extends Component {
     };
   }
 
-
-
   loadWelcomePet = async () => {
     const pet = await fetchWelcomePet();
     this.setState({ pet });
-
   }
 
   makePet = (pet) => {
