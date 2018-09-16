@@ -40,7 +40,7 @@ class Matches extends Component {
   getMatches = async () => {
     
     // const matches = await fetchMatches;
-    // console.log(matches)
+    // 
     // this.setState.matches({...matches});
   }
 

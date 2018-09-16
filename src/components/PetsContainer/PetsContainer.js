@@ -6,7 +6,7 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
 
   const makeAllPets = (petsArray) => {
     return petsArray.map((pet, idx) => {
-      // console.log('make all pets')
+      
       if (idx === 0) {
         return (
           <PetImage

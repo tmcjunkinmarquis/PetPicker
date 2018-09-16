@@ -12,7 +12,6 @@ export const petsArray = (petsArray) => ({
   petsArray
 });
 
-export const indivPet = (indivPetObj) => ({
-  type: 'PET',
-  indivPetObj
+export const updatePets = () => ({
+  type: 'UPDATE_PETS'
 });

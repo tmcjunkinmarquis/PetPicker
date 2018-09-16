@@ -67,7 +67,7 @@ export class Login extends Component {
         this.state.description,
         this.state.pic
       );
-      console.log('newUserData: ', newUserData)
+     
       this.props.toggleLoggedIn();
       this.props.storeUser(newUserData);
       this.props.history.push('/Pets');
