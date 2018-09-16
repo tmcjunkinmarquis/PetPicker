@@ -1,20 +1,25 @@
 import React from 'react';
-// import './IndividualMatch.css';
+import './IndividualMatch.css';
 import PropTypes from 'prop-types';
 
 
-const TestImportPath= (props) => {
+const IndividualMatch= ({match}) => {
 
-  
-  return (
-    <div className='individual-match'>
-      I am an individual match
-    </div>
-  );
+  if(match.name){
+    return (
+      <div className='individual-match'>
+        <img 
+          className="picture"
+          src={match.pic} alt=""/>
+        <p>{match.name}</p>
+        <p>{match.description}</p>
+      </div>
+    );
+  }
 };
 
-export default TestImportPath;
+export default IndividualMatch;
 
-TestImportPath.propTypes = {
-  
+IndividualMatch.propTypes = {
+  match: PropTypes.object
 };

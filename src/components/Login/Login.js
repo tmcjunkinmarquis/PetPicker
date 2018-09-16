@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+// import { Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
+import {fetchUserData} from '../../api_calls/api-calls';
 
 export class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       username: '',
       password: ''
@@ -17,7 +18,6 @@ export class Login extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
@@ -25,7 +25,8 @@ export class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    // const userData = await fetchUserData();
+    const userData = await fetchUserData(this.state.username, this.state.password);
+    
     // const foundUser = userData.data.find(
     //   user => user.username === this.state.username.toLowerCase()
     // );
@@ -41,7 +42,8 @@ export class Login extends Component {
     else {
       this.props.toggleLoggedIn();
       this.props.storeUser(this.state.username);
-      this.props.history.push('/');
+      this.props.history.push('/Pets');
+      
       // } else {
       //   alert('Incorrect Password');
     }
@@ -67,7 +69,11 @@ export class Login extends Component {
             onChange={this.handleChange}
             className="inputField"
           />
-          <button className="loginButton" />
+          <button
+            name="submit" 
+            type="submit"
+            className="loginButton"
+             >Submit</button>
         </form>
       </div>
     );
@@ -79,12 +85,12 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   toggleLoggedIn: () => dispatch(toggleLoggedIn()),
-  storeUser: user => dispatch(storeUser(user)),
+  storeUser: user => dispatch(storeUser(user))
 });
 
 Login.propTypes = {
-  // toggleLoggedIn: PropTypes.bool.isRequired,
-  // storeUser: PropTypes.func.isRequired,
+  toggleLoggedIn: PropTypes.bool.isRequired,
+  storeUser: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
 

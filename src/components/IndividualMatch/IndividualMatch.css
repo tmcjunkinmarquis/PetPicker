@@ -1,0 +1,12 @@
+.individualMatch {
+  width: 300px;
+  height: 200px;
+  border: 1px solid darkgray;
+  color: blue;
+}
+
+.picture {
+  width: 40px;
+  height: 40px;
+  border: 1px solid red;
+}

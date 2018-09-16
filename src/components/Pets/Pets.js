@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import NopeButton from '../NopeButton/NopeButton';
 import LikeButton from '../LikeButton/LikeButton';
-import { fetchUsers, fetchPets } from '../../api_calls/api-calls';
+import { fetchPets } from '../../api_calls/api-calls';
 import PetsContainer from '../PetsContainer/PetsContainer';
 import PetDescription from '../PetDescription/PetDescription';
 import './Pets.css';
 
-class Welcome extends Component {
+class Pets extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +33,7 @@ class Welcome extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to Pet Picker!</h1>
+        <h1>Pets to Pet Picker!</h1>
 
         <PetsContainer
           petsArray={this.state.petsArray}
@@ -51,4 +51,4 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+export default Pets;

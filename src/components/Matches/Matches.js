@@ -4,27 +4,29 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Matches.css';
 import IndividualMatch from '../IndividualMatch/IndividualMatch';
+import {fetchMatches} from '../../api_calls/api-calls'
 
 class Matches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      matches: [
-        { username: 'Betty', status: 'owner', petUrl: 'www.getUrl.com' },
-        { username: 'Bubba', status: 'owner', petUrl: 'www.getAnotherUrl.com' }
+      matches: [ 
+        {name:'Betty', description: "description of Betty", pic:"www..."  },
+        { name: 'Bubba', description: "description of Bubba", pic: 'www.getAnotherUrl.com' }
       ]
     };
   }
 
   handleChange = event => {
+    
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
 
-  makeIndividualMatch = () => {
-    console.log(this.state);
+  makeIndividualMatches = () => {
+    
     return this.state.matches.map((match, idx) => {
       return (
         <IndividualMatch
@@ -35,11 +37,11 @@ class Matches extends Component {
     });
   }
 
-
-  getMatches = () => {
-    console.log('I am a match fetch eventually');
-    //import getMatches from apiCalls
-    //send array of matches to setState in this component
+  getMatches = async () => {
+    
+    // const matches = await fetchMatches;
+    // console.log(matches)
+    // this.setState.matches({...matches});
   }
 
   componentDidMount() {
@@ -49,9 +51,9 @@ class Matches extends Component {
   render() {
     return (
       <div className="Matches">
-        <p>I am the Matches Route</p>
+        <p>These are your matches!</p>
         <div>
-          {this.makeIndividualMatch()}
+          {this.makeIndividualMatches()}
         </div>
       </div>
     );
