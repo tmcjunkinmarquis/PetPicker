@@ -7,9 +7,10 @@ import { fetchDeletePet } from '../../api_calls/api-calls';
 
 export const NopeButton = (props) => {
   const handleNopeClick = async () => {
-    await fetchDeletePet(props.userId, props.petsArray[0].id);
-    props.updatePets();
-
+    if (props.petsArray.length) {
+      await fetchDeletePet(props.userId, props.petsArray[0].id);
+      props.updatePets();
+    }
   }
 
   return (

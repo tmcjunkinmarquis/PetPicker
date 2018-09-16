@@ -7,6 +7,11 @@ export const storeUser = (userObj) => ({
   userObj
 });
 
+export const storeMatches = (matchesArray) => ({
+  type: 'STORE_MATCHES',
+  matchesArray
+});
+
 export const petsArray = (petsArray) => ({
   type: 'PETS_ARRAY',
   petsArray

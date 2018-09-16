@@ -17,7 +17,12 @@ export class Pets extends Component {
   }
 
   loadAllPets = async () => {
+
     const petsArray = await fetchPets(this.props.userId);
+    if (!petsArray.length) {
+      alert('There are no more pets')
+      return
+    }
     this.props.storeAllPets(petsArray);
   }
 
@@ -46,6 +51,7 @@ export class Pets extends Component {
       <div>
         <h1>Pets to Pet Picker!</h1>
         {this.loadImage()}
+
         <div className="nope-or-like">
           <NopeButton />
           <LikeButton />
@@ -64,7 +70,6 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   storeAllPets: petsArray => dispatch(actions.petsArray(petsArray))
-  // storeIndivPet: indivPetObj => dispatch(actions.indivPet(indivPetObj))
 });
 
 Pets.propTypes = {
@@ -73,7 +78,6 @@ Pets.propTypes = {
   history: PropTypes.object.isRequired,
   petsArray: PropTypes.array,
   storeAllPets: PropTypes.func
-  // storeIndivPet: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pets);

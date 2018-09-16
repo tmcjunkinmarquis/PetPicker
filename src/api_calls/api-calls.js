@@ -16,10 +16,12 @@ const fetchPets = async (id) => {
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
   try {
     const response = await fetch(url);
+    console.log('fetchPets response: ', response)
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    return data
   } catch (error) {
     throw Error(`Network request failed. (error: ${error.message})`);
   }
@@ -85,12 +87,8 @@ const fetchSignUp = async (user, password, role, description, pic) => {
 };
 
 const fetchDeletePet = async (user_id, id) => {
-  
-
   // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
-  
-  
   const optionsObj = {
     method: "DELETE",
     headers: {
@@ -99,7 +97,6 @@ const fetchDeletePet = async (user_id, id) => {
   };
   try {
     const response = await fetch(url, optionsObj);
-    
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
@@ -110,8 +107,6 @@ const fetchDeletePet = async (user_id, id) => {
 };
 
 const fetchLikePostPet = async (user_id, id) => {
-  
-
   // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
@@ -122,8 +117,6 @@ const fetchLikePostPet = async (user_id, id) => {
   };
   try {
     const response = await fetch(url, optionsObj);
-    
-
     if (!response.ok) {
       throw Error(`${response.status}`);
     }

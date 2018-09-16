@@ -3,7 +3,6 @@ const intialState = {
 };
 
 export const pets = (state = intialState, action) => {
-  // console.log('petState:', state);
 
   switch (action.type) {
     case 'PETS_ARRAY':

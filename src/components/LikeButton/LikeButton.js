@@ -7,8 +7,10 @@ import { fetchLikePostPet } from '../../api_calls/api-calls';
 
 export const LikeButton = (props) => {
   const handleLikeClick = async () => {
-    await fetchLikePostPet(props.userId, props.petsArray[0].id);
-    props.updatePets();
+    if (props.petsArray.length) {
+      await fetchLikePostPet(props.userId, props.petsArray[0].id);
+      props.updatePets();
+    }
   };
 
   return (
