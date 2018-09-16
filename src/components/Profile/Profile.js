@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {fetchDeleteAccount} from '../../api_calls/api-calls'
+import { fetchDeleteAccount } from '../../api_calls/api-calls'
 
 export class Profile extends Component {
   constructor() {
@@ -24,26 +24,24 @@ export class Profile extends Component {
   render() {
     return (
       <div>
-        <p> <button 
+        <p> <button
           type="submit"
           onClick={this.fetchDeleteAccount}
         >Delete Account</button> </p>
-
         <form>
           <section>
-
             <fieldset>
               <legend>Profile</legend>
               <ul>
                 <li>
                   <label htmlFor="owner">
-                  Owner:
+                    Owner:
                     <input type="radio" id="owner" name="status" value="Owner" onChange={this.handleChange} />
                   </label>
                 </li>
                 <li>
                   <label htmlFor="adopter">
-                  Adopter:
+                    Adopter:
                     <input type="radio" id="adopter" name="status" value="Adopter" onChange={this.handleChange} />
                   </label>
                 </li>

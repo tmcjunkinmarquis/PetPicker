@@ -66,16 +66,17 @@ const fetchMatches = async (id) => {
   }
 };
 
-const fetchSignIn = async (username, password, description, pic) => {
-  const url = `https://pet-picker-api.herokuapp.com/api/v1/users`;
+const fetchSignUp = async (user, password, role, description, pic) => {
+  const url = 'https://pet-picker-api.herokuapp.com/api/v1/users';
   const optionsObj = {
     method: "POST",
     headers: {
-      "Content-Type": "application/json; charset=utf-8",
+      "Content-Type": "application/json; charset=utf-8"
     },
-    body: JSON.stringify({ user: username, password, description, pic })
+    body: JSON.stringify({ user: { user, password, role, description, pic } })
   };
   try {
+    console.log('optionsObj: ', optionsObj)
     const response = await fetch(url, optionsObj);
     if (!response.ok) {
       throw Error(`${response.status}`);
@@ -86,4 +87,4 @@ const fetchSignIn = async (username, password, description, pic) => {
   }
 };
 
-export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches, fetchSignIn };
+export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches, fetchSignUp };
