@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
-import {fetchUserData} from '../../api_calls/api-calls';
+import { fetchUserData } from '../../api_calls/api-calls';
 
 export class Login extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     const userData = await fetchUserData(this.state.username, this.state.password);
-    
+
     // const foundUser = userData.data.find(
     //   user => user.username === this.state.username.toLowerCase()
     // );
@@ -42,8 +42,8 @@ export class Login extends Component {
     else {
       this.props.toggleLoggedIn();
       this.props.storeUser(this.state.username);
-      this.props.history.push('/Pets');
-      
+      // this.props.history.push('/Pets');
+
       // } else {
       //   alert('Incorrect Password');
     }
@@ -52,6 +52,7 @@ export class Login extends Component {
   render() {
     return (
       <div className="Login">
+        <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -70,11 +71,40 @@ export class Login extends Component {
             className="inputField"
           />
           <button
-            name="submit" 
+            name="submit"
             type="submit"
             className="loginButton"
-             >Submit</button>
+          >Submit</button>
         </form>
+
+        <hr />
+
+
+
+        <form onSubmit={this.handleSignUpSubmit}>
+          <input
+            type="text"
+            placeholder="Choose Username"
+            name="username"
+            value={this.state.username}
+            onChange={this.handleChange}
+            className="inputField"
+          />
+          <input
+            type="password"
+            placeholder="Choose Password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            className="inputField"
+          />
+          <button
+            name="submit"
+            type="submit"
+            className="signinButton"
+          >Submit</button>
+        </form>
+
       </div>
     );
   }

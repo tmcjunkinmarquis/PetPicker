@@ -13,10 +13,7 @@ class Welcome extends Component {
     };
   }
 
-  handleHaveWantClick = () => {
-    console.log('howdy');
-    // toggle
-  }
+
 
   loadWelcomePet = async () => {
     const pet = await fetchWelcomePet();
@@ -44,7 +41,7 @@ class Welcome extends Component {
         <div>{this.makePet(this.state.pet)}</div>
 
         <div className="nope-or-like">
-          <HaveWantPetButton handleNopeClick={this.handleHaveWantClick} />
+          <HaveWantPetButton />
         </div>
       </div>
     );

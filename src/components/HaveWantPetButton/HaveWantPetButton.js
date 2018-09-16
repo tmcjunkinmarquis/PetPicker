@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import './HaveWantPetButton.css'
+import React from 'react';
+import { withRouter, NavLink } from 'react-router-dom';
+import './HaveWantPetButton.css';
 
-const HaveWantPetButton = (props) => {
-
+const HaveWantPetButton = () => {
 
   return (
+    <NavLink
+      to='/login'
+      className="button-xlarge pure-button">Have Pet / Want Pet
+    </NavLink>
+  );
+};
 
-    <button className="button-xlarge pure-button">Have Pet / Want Pet</button>
-
-
-  )
-}
-
-export default HaveWantPetButton;
+export default withRouter(HaveWantPetButton);

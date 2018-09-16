@@ -1,4 +1,6 @@
 const fetchUserData = async (username, password) => {
+  console.log(username, password);
+
   //https://pet-picker-api.herokuapp.com/api/v1/users?name=Jimbo&password=123
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users?name=${username}&password=${password}`;
   try {
