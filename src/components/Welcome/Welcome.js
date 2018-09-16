@@ -22,11 +22,9 @@ class Welcome extends Component {
   }
 
   makePet = (pet) => {
-    {
-      return (
-        <PetImage pet={pet} />
-      );
-    }
+    return (
+      <PetImage pet={pet} />
+    );
   }
 
   async componentDidMount() {

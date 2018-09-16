@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Pets from './components/Pets/Pets'
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";

@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './NopeButton.css';
 import PropTypes from 'prop-types'
 
 const NopeButton = (props) => {
 
-  return(
-    
-    <button 
+  return (
+
+    <button
       className="button-xlarge pure-button"
       onClick={props.handleNopeClick}
     >Nope
     </button>
-  
+
   );
 };
 

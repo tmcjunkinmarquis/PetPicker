@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import NopeButton from '../NopeButton/NopeButton';
 import LikeButton from '../LikeButton/LikeButton';
 import { fetchPets } from '../../api_calls/api-calls';
 import PetsContainer from '../PetsContainer/PetsContainer';
 import PetDescription from '../PetDescription/PetDescription';
 import './Pets.css';
+import PropTypes from 'prop-types';
 
-class Pets extends Component {
+export class Pets extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,9 +23,9 @@ class Pets extends Component {
   }
 
   loadAllPets = async () => {
-    const petsArray = await fetchPets();
+    const petsArray = await fetchPets(this.props.userId);
+    console.log('petsArray: ', petsArray);
     this.setState({ petsArray });
-
   }
 
   async componentDidMount() {
@@ -51,4 +53,15 @@ class Pets extends Component {
   }
 }
 
-export default Pets;
+export const mapStateToProps = state => ({
+  userId: state.user.id
+});
+
+export const mapDispatchToProps = dispatch => ({
+});
+
+Pets.propTypes = {
+  userId: PropTypes.number
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pets);
