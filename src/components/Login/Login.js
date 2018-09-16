@@ -38,7 +38,6 @@ export class Login extends Component {
     }
     else {
       const userData = await fetchUserData(this.state.username, this.state.password);
-      console.log(userData)
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
       this.props.history.push('/Pets');
@@ -68,7 +67,7 @@ export class Login extends Component {
         this.state.description,
         this.state.pic
       );
-      console.log('newUserData: ', newUserData)
+     
       this.props.toggleLoggedIn();
       this.props.storeUser(newUserData);
       this.props.history.push('/Pets');

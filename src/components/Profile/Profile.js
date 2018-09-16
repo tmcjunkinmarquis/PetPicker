@@ -75,20 +75,18 @@ export class Profile extends Component {
           <p> <button type="submit">Save Changes</button> </p>
         </form >
       </div>
-
     );
   }
-
 }
+
+export const mapStateToProps = (state) => ({
+  userId: state.user.userId
+});
 
 export const mapDispatchToProps = (dispatch) => ({
   //storeUserId: (userId) => dispatch(setUserId(userId)), 
   // addFavorites: (favoriteMovies) => dispatch(addStoredFavorites(favoriteMovies))
-  deleteUserId: (userId) => dispatch()
-});
-
-export const mapStateToProps = (state) => ({
-  userId: state.userId
+  //deleteUserId: (userId) => dispatch()
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

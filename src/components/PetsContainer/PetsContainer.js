@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import './PetsContainer.css'
 import PetImage from '../PetImage/PetImage';
 
@@ -6,7 +6,7 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
 
   const makeAllPets = (petsArray) => {
     return petsArray.map((pet, idx) => {
-      // console.log('make all pets')
+      
       if (idx === 0) {
         return (
           <PetImage
@@ -25,7 +25,6 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
         );
       }
     });
-
   };
 
   const makePets = (petsArray) => {
