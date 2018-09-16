@@ -21,7 +21,7 @@ class Welcome extends Component {
   loadWelcomePet = async () => {
     const pet = await fetchWelcomePet();
     this.setState({ pet });
-    
+
   }
 
   makePet = (pet) => {
@@ -44,7 +44,7 @@ class Welcome extends Component {
         <div>{this.makePet(this.state.pet)}</div>
 
         <div className="nope-or-like">
-          <HaveWantPetButton handleNopeClick={this.handleHaveWantClick} />  
+          <HaveWantPetButton handleNopeClick={this.handleHaveWantClick} />
         </div>
       </div>
     );

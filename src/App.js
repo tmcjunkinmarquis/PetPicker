@@ -19,7 +19,7 @@ class App extends Component {
         <Route path='/matches' component={Matches} />
         <Route path='/pets' component={Pets} />
         <Route path='/login' component={Login} />
-      </div >
+      </div>
     );
   }
 }

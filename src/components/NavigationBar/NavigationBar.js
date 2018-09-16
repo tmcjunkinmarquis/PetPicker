@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo';
 
 class NavigationBar extends Component {
   constructor(props) {
-    super()
+    super();
   }
 
   render() {
@@ -16,7 +16,7 @@ class NavigationBar extends Component {
         <NavLink to='/pets' className='nav'>Pets</NavLink>
         {/* <NavLink to='/signup' className='nav'>Sign Up</NavLink> */}
       </nav >
-    )
+    );
   }
 }
 

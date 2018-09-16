@@ -1,60 +1,67 @@
-const fetchUserData = (username, password) => {
+const fetchUserData = async (username, password) => {
   //https://pet-picker-api.herokuapp.com/api/v1/users?name=Jimbo&password=123
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users?name=${username}&password=${password}`;
-  return fetch(url)
-    .then((response) => {
-      console.log(response);
-      return response.json();
-    })
-    .then((user) => {
-      return user;
-    });
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
 };
-  
-const fetchPets = (id) => {
+
+const fetchPets = async (id) => {
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
-    
-  return fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((pets) => {
-      return pets;
-    });
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
 };
 
-const fetchWelcomePet = () => {
+const fetchWelcomePet = async () => {
   const url = 'https://pet-picker-api.herokuapp.com/api/v1/pets';
-
-  return fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((pet) => {
-      return pet;
-    });
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
 };
 
-const fetchDeleteAccount = (id) => {
-  const url = `https://pet-picker-api.herokuapp.com/api/v1/users//${id}`;
-
-  return fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((pet) => {
-      return pet;
-    });
+const fetchDeleteAccount = async (id) => {
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
 };
 
-const fetchMatches = (id) => {
+const fetchMatches = async (id) => {
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
-  return fetch(url)
-    .then((response) => {
-      return response.json();
-    })
-    .then((match) => {
-      return match;
-    });
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
 };
+
 export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches };
