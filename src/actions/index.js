@@ -2,7 +2,7 @@ export const toggleLoggedIn = () => ({
   type: 'TOGGLE_LOGGEDIN'
 });
 
-export const storeUser = ({ username }) => ({
+export const storeUser = ({ userObj }) => ({
   type: 'STORE_USER',
-  username
+  userObj
 });

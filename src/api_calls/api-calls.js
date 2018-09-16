@@ -66,4 +66,24 @@ const fetchMatches = async (id) => {
   }
 };
 
-export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches };
+const fetchSignIn = async (username, password, description, pic) => {
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users`;
+  const optionsObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify({ user: username, password })
+  };
+  try {
+    const response = await fetch(url, optionsObj);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
+};
+
+export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches, fetchSignIn };

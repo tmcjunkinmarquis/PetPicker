@@ -5,14 +5,19 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
-import { fetchUserData } from '../../api_calls/api-calls';
+import { fetchUserData, fetchSignIn } from '../../api_calls/api-calls';
 
 export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      newUsername: '',
+      newUserPassword: '',
+      newStatus: '',
+      newDescription: '',
+      newPic: ''
     };
   }
 
@@ -25,29 +30,40 @@ export class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const userData = await fetchUserData(this.state.username, this.state.password);
-
-    // const foundUser = userData.data.find(
-    //   user => user.username === this.state.username.toLowerCase()
-    // );
 
     if (this.state.username === "") {
       alert('Please enter a username');
-      // } else if (!foundUser) {
-      //   alert('No such user');
-      // } else if (foundUser.password === this.state.password) {
     } else if (this.state.password === "") {
       alert('Please enter a password');
     }
     else {
+      const userData = await fetchUserData(this.state.username, this.state.password);
+
       this.props.toggleLoggedIn();
-      this.props.storeUser(this.state.username);
+      this.props.storeUser(userData);
       // this.props.history.push('/Pets');
 
       // } else {
       //   alert('Incorrect Password');
     }
   };
+
+  handleSignUpSubmit = async (event) => {
+    event.preventDefault();
+    if (this.state.username === "") {
+      alert('Please enter a username');
+    } else if (this.state.password === "") {
+      alert('Please enter a password');
+    } else if (this.state.description === "") {
+      alert('Please enter a description');
+    } else if (this.state.url === "") {
+      alert('Please enter a url path to an image');
+    } else {
+      const newUserData = await fetchSignIn(this.state.username, this.state.password, this.state.description, this.state.pic);
+    }
+
+
+  }
 
   render() {
     return (
@@ -70,22 +86,21 @@ export class Login extends Component {
             onChange={this.handleChange}
             className="inputField"
           />
+
           <button
             name="submit"
             type="submit"
             className="loginButton"
-          >Submit</button>
+          >Login</button>
         </form>
 
         <hr />
-
-
 
         <form onSubmit={this.handleSignUpSubmit}>
           <input
             type="text"
             placeholder="Choose Username"
-            name="username"
+            name="newUsername"
             value={this.state.username}
             onChange={this.handleChange}
             className="inputField"
@@ -93,16 +108,48 @@ export class Login extends Component {
           <input
             type="password"
             placeholder="Choose Password"
-            name="password"
+            name="newUserPassword"
             value={this.state.password}
             onChange={this.handleChange}
             className="inputField"
           />
+          <fieldset>
+            <legend>Profile</legend>
+            <ul>
+              <li>
+                <label htmlFor="owner">
+                  Owner:
+                  <input type="radio" id="owner" name="status" value="Owner" onChange={this.handleChange} />
+                </label>
+              </li>
+              <li>
+                <label htmlFor="adopter">
+                  Adopter:
+                  <input type="radio" id="adopter" name="status" value="Adopter" onChange={this.handleChange} />
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <input
+            placeholder="Enter Description"
+            name="newDescription"
+            value={this.state.description}
+            onChange={this.handleChange}
+            className="inputField"
+          />
+          <input
+            type="newUrl"
+            placeholder="Enter URL to image"
+            name="pic"
+            value={this.state.pic}
+            onChange={this.handleChange}
+            className="inputField"
+          />
           <button
-            name="submit"
+            name="newSubmit"
             type="submit"
             className="signinButton"
-          >Submit</button>
+          >Sign In</button>
         </form>
 
       </div>
@@ -119,7 +166,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 Login.propTypes = {
-  toggleLoggedIn: PropTypes.bool.isRequired,
+  toggleLoggedIn: PropTypes.func.isRequired,
   storeUser: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
