@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './LikeButton.css'
+import './LikeButton.css';
+import PropTypes from 'prop-types';
 
 const LikeButton = (props) => {
 
@@ -13,3 +14,7 @@ const LikeButton = (props) => {
 }
 
 export default LikeButton;
+
+LikeButton.propTypes = {
+  handleLikeButton: PropTypes.func
+};

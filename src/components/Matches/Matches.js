@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Matches.css';
 import IndividualMatch from '../IndividualMatch/IndividualMatch';
-import {fetchMatches} from '../../api_calls/api-calls'
+import {fetchMatches} from '../../api_calls/api-calls';
 
 class Matches extends Component {
   constructor(props) {
@@ -68,7 +68,6 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 Matches.propTypes = {
-
   history: PropTypes.object.isRequired
 };
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Logo from '../Logo/Logo';
+import PropTypes from 'prop-types';
 
 class NavigationBar extends Component {
   constructor(props) {
@@ -26,6 +27,10 @@ class NavigationBar extends Component {
   }
 }
 
+NavigationBar.propTypes = {
+  loggedIn: PropTypes.bool
+};
+
 export const mapStateToProps = state => ({
   loggedIn: state.loggedIn
 });
@@ -36,3 +41,4 @@ export const mapDispatchToProps = dispatch => ({
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
 );
+

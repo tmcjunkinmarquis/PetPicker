@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Logo.css';
 
-const Logo = (props) => {
+
+const Logo = () => {
 
 
   return (

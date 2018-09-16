@@ -87,4 +87,34 @@ const fetchSignUp = async (user, password, role, description, pic) => {
   }
 };
 
-export { fetchUserData, fetchPets, fetchWelcomePet, fetchDeleteAccount, fetchMatches, fetchSignUp };
+const fetchDeletePet = async (id, pet_id) => {
+  // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/connnections?pet_id=${pet_id}`;
+  const optionsObj = {
+    method: "DELETE", 
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify({id, pet_id})
+  };
+  try {
+    console.log('optionsObj: ', optionsObj)
+    const response = await fetch(url, optionsObj);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
+};
+
+export { 
+  fetchUserData, 
+  fetchPets, 
+  fetchWelcomePet, 
+  fetchDeleteAccount, 
+  fetchMatches,
+  fetchSignUp,
+  fetchDeletePet
+};

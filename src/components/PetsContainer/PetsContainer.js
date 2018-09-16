@@ -25,7 +25,6 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
         );
       }
     });
-
   };
 
   const makePets = (petsArray) => {
