@@ -1,4 +1,4 @@
-import { pets } from "./petsReducer";
+import { pets } from "../petsReducer";
 
 describe('pets', () => {
 
