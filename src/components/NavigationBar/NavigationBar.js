@@ -17,10 +17,10 @@ class NavigationBar extends Component {
 
   render() {
     return (
-      <div className="navbar-fixed">
+      <div className="navbar-fixed ">
       <nav>
         <div className="container">
-        <div className="Nav-wrapper">
+        <div className="Nav-wrapper red lighten-1">
         <h3 className="left nav-title-pp">Pet Picker</h3>
         {this.props.loggedIn &&
           <ul className="right">

@@ -31,10 +31,14 @@ export class Pets extends Component {
 
   loadImage = () => {
     if (this.props.petsArray.length) {
-      return (<img
+      return (
+        <div>
+        <h3>{this.props.petsArray[0].name}</h3>
+        <img className="responsive-img"
         src={this.props.petsArray[0].pic}
         alt="pic"
       />
+      </div>
       );
     } else {
       this.loadAllPets();
@@ -50,7 +54,6 @@ export class Pets extends Component {
   render() {
     return (
       <div>
-        <h1>Pets to Pet Picker!</h1>
         {this.loadImage()}
 
         <div className="nope-or-like">
