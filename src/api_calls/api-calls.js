@@ -100,6 +100,7 @@ const fetchSignUp = async (name, password, role, description, pic) => {
 
 const fetchDeletePet = async (user_id, id) => {
   // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
+
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
     method: "DELETE",
@@ -107,6 +108,7 @@ const fetchDeletePet = async (user_id, id) => {
       "Content-Type": "application/json; charset=utf-8"
     }
   };
+  console.log(`About to nope pet at ${url}`);
   try {
     const response = await fetch(url, optionsObj);
     if (!response.ok) {
@@ -127,6 +129,7 @@ const fetchLikePostPet = async (user_id, id) => {
       "Content-Type": "application/json; charset=utf-8"
     }
   };
+  console.log(`About to like pet at ${url}`);
   try {
     const response = await fetch(url, optionsObj);
     if (!response.ok) {
