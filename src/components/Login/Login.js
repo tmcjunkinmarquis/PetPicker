@@ -5,7 +5,8 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
-import { fetchUserData, fetchSignUp } from '../../api_calls/api-calls';
+import { fetchUserData, fetchSignUp, fetchMatches } from '../../api_calls/api-calls';
+import * as actions from '../../actions';
 
 export class Login extends Component {
   constructor(props) {
@@ -19,6 +20,11 @@ export class Login extends Component {
       description: '',
       pic: ''
     };
+  }
+
+  getMatches = async () => {
+    const matches = await fetchMatches(this.props.userId);
+    this.props.storeMatches(matches);
   }
 
   handleChange = event => {
@@ -40,6 +46,7 @@ export class Login extends Component {
       const userData = await fetchUserData(this.state.username, this.state.password);
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
+      this.getMatches()
       this.props.history.push('/Pets');
 
       // } else {
@@ -67,7 +74,7 @@ export class Login extends Component {
         this.state.description,
         this.state.pic
       );
-     
+
       this.props.toggleLoggedIn();
       this.props.storeUser(newUserData);
       this.props.history.push('/Pets');
@@ -169,17 +176,20 @@ export class Login extends Component {
 }
 
 export const mapStateToProps = state => ({
+  userId: state.user.id
 });
 
 export const mapDispatchToProps = dispatch => ({
   toggleLoggedIn: () => dispatch(toggleLoggedIn()),
-  storeUser: user => dispatch(storeUser(user))
+  storeUser: user => dispatch(storeUser(user)),
+  storeMatches: matchesArray => dispatch(actions.storeMatches(matchesArray))
 });
 
 Login.propTypes = {
   toggleLoggedIn: PropTypes.func.isRequired,
   storeUser: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  storeMatches: PropTypes.func.isRequired,
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
