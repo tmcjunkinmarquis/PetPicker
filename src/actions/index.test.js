@@ -7,7 +7,7 @@ describe('Actions', () => {
       const actual = actions.toggleLoggedIn();
 
       expect(actual).toEqual({
-        type: 'TOGGLE_LOGGEDIN',
+        type: 'TOGGLE_LOGGEDIN'
       });
     });
   });
@@ -56,7 +56,7 @@ describe('Actions', () => {
       const actual = actions.updatePets();
 
       expect(actual).toEqual({
-        type: 'UPDATE_PETS',
+        type: 'UPDATE_PETS'
       });
     });
   });
@@ -66,7 +66,7 @@ describe('Actions', () => {
       const actual = actions.resetStore();
 
       expect(actual).toEqual({
-        type: 'RESET_STORE',
+        type: 'RESET_STORE'
       });
     });
   });

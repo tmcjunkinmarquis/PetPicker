@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockUserData } from './mockUserData';
+import { mockUserData, mockPetData } from './mockUserData';
 import {
   fetchUserData,
   fetchPets,
@@ -39,3 +39,30 @@ describe('fetchUserData', () => {
     expect(result).toEqual(expected);
   });
 });
+
+describe('fetchPets', () => {
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(mockPets)
+    }));
+  });
+
+  it('should call fetch with the correct params', async () => {
+    const id = 1;
+    
+    const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
+    await fetchPets();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
+
+  it.skip('should return correct data', async () => {
+    const expected = mockPets;
+    const result = await fetchPets();
+
+    expect(result).toEqual(expected);
+  });
+});
+
