@@ -27,7 +27,7 @@ class NavigationBar extends Component {
             <li><NavLink to='/profile' className='nav'>Profile</NavLink></li>
             <li><NavLink to='/matches' className='nav'>Matches</NavLink></li>
             <li><NavLink to='/pets' className='nav'>Pets</NavLink></li>
-            {/* <NavLink to='/logout' className='nav'>Log Out</NavLink> */}
+            <li><NavLink exact to='/' className='nav' onClick={this.handleLogOut}>Logout</NavLink></li>
           </ul>}
           </div>
           </div>
