@@ -25,15 +25,15 @@ describe('Actions', () => {
     });
   });
 
-  describe('matchesArray', () => {
+  describe('storeMatches', () => {
     it('has a type of STORE_MATCHES', () => {
-      const userObj = [];
+      const matchesArray = [];
 
-      const actual = actions.matchesArray(userObj);
+      const actual = actions.storeMatches(matchesArray);
 
       expect(actual).toEqual({
         type: 'STORE_MATCHES',
-        userObj
+        matchesArray
       });
     });
   });
