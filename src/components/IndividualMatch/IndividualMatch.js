@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 
 const IndividualMatch = ({ match }) => {
   return (
-    <div className='individual-match'>
+    <li className='collection-item'>
       <img
-        className="picture"
-        src={match.pic} alt="" />
-      <p>{match.name}</p>
-      <p>{match.description}</p>
-    </div>
+        className="circle avatar-pic left"
+        src={match.pic} alt=""
+      />
+      <span className="title left pet-title">{match.name}</span> <br />
+      <p className="left-align">{match.description}</p>
+    </li>
   );
 };
 
@@ -20,4 +21,3 @@ IndividualMatch.propTypes = {
 };
 
 export default IndividualMatch;
-

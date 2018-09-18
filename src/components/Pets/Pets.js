@@ -29,16 +29,21 @@ export class Pets extends Component {
     }
   }
 
-  loadImage = () => {
+  loadPet = () => {
     if (this.props.petsArray.length) {
       return (
         <div>
         <h3>{this.props.petsArray[0].name}</h3>
-        <img className="responsive-img"
+        <img className="responsive-img pets-img"
         src={this.props.petsArray[0].pic}
         alt="pic"
-      />
-      </div>
+        />
+        <div className="nope-or-like">
+          <NopeButton />
+          <LikeButton />
+        </div>
+        <p className="flow-text">{this.props.petsArray[0].description}</p>
+        </div>
       );
     } else {
       this.loadAllPets();
@@ -54,13 +59,7 @@ export class Pets extends Component {
   render() {
     return (
       <div>
-        {this.loadImage()}
-
-        <div className="nope-or-like">
-          <NopeButton />
-          <LikeButton />
-        </div>
-        <PetDescription />
+        {this.loadPet()}
       </div>
     );
   }
