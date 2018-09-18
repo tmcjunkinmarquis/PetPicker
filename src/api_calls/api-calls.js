@@ -97,7 +97,7 @@ const fetchSignUp = async (name, password, role, description, pic) => {
   } catch (error) {
     throw Error(`Network request failed. (error: ${error.message})`);
   }
-};
+}; 
 
 const fetchDeletePet = async (user_id, id) => {
   // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
