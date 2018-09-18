@@ -11,7 +11,6 @@ describe('Profile', () => {
   beforeEach(() => {
     jest.resetAllMocks();
     mockProps = {
-      userId: '1',
       loggedIn: false,
       history: { push: jest.fn() }
     };
