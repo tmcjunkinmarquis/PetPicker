@@ -20,3 +20,10 @@ export const petsArray = (petsArray) => ({
 export const updatePets = () => ({
   type: 'UPDATE_PETS'
 });
+
+export const resetStore = () => ({
+  type: 'RESET_STORE'
+});
+
+
+

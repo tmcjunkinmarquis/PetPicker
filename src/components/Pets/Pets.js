@@ -12,25 +12,20 @@ export class Pets extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: true
     };
   }
 
   loadAllPets = async () => {
-
-    const petsArray = await fetchPets(this.props.userId);
-    if (!petsArray.length) {
-      alert('There are no more pets')
-      return
-    }
-    this.props.storeAllPets(petsArray);
-  }
-
-  async componentDidMount() {
     if (this.props.loggedIn) {
-      await this.loadAllPets();
+      const petsArray = await fetchPets(this.props.userId);
+
+      if (!petsArray.length) {
+        alert('There are no more pets');
+        return;
+      }
+      this.props.storeAllPets(petsArray);
     } else {
-      this.props.history.push('/');
+      this.props.history.push('/login');
     }
   }
 
@@ -45,6 +40,12 @@ export class Pets extends Component {
       this.loadAllPets();
     }
   }
+
+
+  componentDidMount = async () => {
+    await this.loadAllPets();
+  }
+
 
   render() {
     return (

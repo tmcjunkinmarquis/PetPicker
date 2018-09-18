@@ -38,6 +38,7 @@ ShallowWrapper {
 />,
         <Route
           component={[Function]}
+          exact={true}
           path="/login"
 />,
       ],
@@ -109,6 +110,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "component": [Function],
+          "exact": true,
           "path": "/login",
         },
         "ref": null,
@@ -145,6 +147,7 @@ ShallowWrapper {
 />,
           <Route
             component={[Function]}
+            exact={true}
             path="/login"
 />,
         ],
@@ -216,6 +219,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "component": [Function],
+            "exact": true,
             "path": "/login",
           },
           "ref": null,

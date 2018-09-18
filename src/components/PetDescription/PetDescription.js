@@ -1,7 +1,7 @@
 import React from 'react';
 import './PetDescription.css';
 
-const PetDescription = (props) => {
+const PetDescription = () => {
 
 
   return (

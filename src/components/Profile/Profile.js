@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDeleteAccount } from '../../api_calls/api-calls'
+import { fetchDeleteAccount } from '../../api_calls/api-calls';
 
 export class Profile extends Component {
   constructor() {
@@ -20,6 +20,12 @@ export class Profile extends Component {
       [name]: value
     });
   };
+
+  componentDidMount = () => {
+    if (!this.props.loggedIn) {
+      this.props.history.push('/login');
+    }
+  }
 
   render() {
     return (
