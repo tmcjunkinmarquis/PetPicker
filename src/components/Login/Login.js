@@ -47,7 +47,7 @@ export class Login extends Component {
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
       this.getMatches()
-      this.props.history.push('/Pets');
+      this.props.history.push('/pets');
 
       // } else {
       //   alert('Incorrect Password');

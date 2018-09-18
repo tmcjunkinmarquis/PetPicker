@@ -13,7 +13,6 @@ const devTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const persistedState = loadState();
-console.log('persistedState: ', persistedState)
 
 const store = createStore(
   rootReducer,

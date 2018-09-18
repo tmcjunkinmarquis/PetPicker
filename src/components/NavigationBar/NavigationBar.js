@@ -3,10 +3,17 @@ import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Logo from '../Logo/Logo';
 import PropTypes from 'prop-types';
+import * as actions from '../../actions';
 
 class NavigationBar extends Component {
   constructor(props) {
     super();
+  }
+
+  handleLogOut = () => {
+    console.log('handleLogOut')
+    this.props.resetStore();
+    localStorage.clear();
   }
 
   render() {
@@ -19,7 +26,7 @@ class NavigationBar extends Component {
             <NavLink to='/profile' className='nav'>Profile</NavLink>
             <NavLink to='/matches' className='nav'>Matches</NavLink>
             <NavLink to='/pets' className='nav'>Pets</NavLink>
-            {/* <NavLink to='/logout' className='nav'>Log Out</NavLink> */}
+            <NavLink exact to='/' className='nav' onClick={this.handleLogOut}>Logout</NavLink>
           </div>}
 
       </nav >
@@ -36,6 +43,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
+  resetStore: () => dispatch(actions.resetStore())
 });
 
 export default withRouter(
