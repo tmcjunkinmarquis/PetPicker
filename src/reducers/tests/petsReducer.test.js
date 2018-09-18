@@ -32,11 +32,11 @@ describe('pets', () => {
     expect(result).toEqual(initialState);
   });
 
-  it.only('should add petsArray if pass in an action type of UPDATE_PETS', () => {
+  it('should add petsArray if pass in an action type of UPDATE_PETS', () => {
     const initialState = {
       petsArray: []
     };
-    const newMockState = {...initialState};
+    const newMockState = { ...initialState };
     const mockAction = {
       type: 'UPDATE_PETS',
       petsArray: [{ name: 'Pupper' }]
