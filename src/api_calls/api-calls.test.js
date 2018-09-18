@@ -63,31 +63,33 @@ describe('fetchUserData', () => {
   });
 });
 
-// describe('fetchPets', () => {
+describe('fetchPets', () => {
+  jest.resetAllMocks();
 
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: true,
-//       json: () => Promise.resolve(mockPetData)
-//     }));
-//   });
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockPetData)
+    }));
+  });
 
-//   it('should call fetch with the correct params', async () => {
-//     const id = 1;
+  it('should call fetch with the correct params', async () => {
+    const id = 1;
+    const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
 
-//     const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
-//     await fetchPets();
 
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   });
+    await fetchPets(id);
 
-//   it('should return correct data', async () => {
-//     const expected = mockPetData;
-//     const result = await fetchPets();
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
 
-//     expect(result).toEqual(expected);
-//   });
-// });
+  it('should return correct data', async () => {
+    const expected = mockPetData;
+    const result = await fetchPets();
+
+    expect(result).toEqual(expected);
+  });
+});
 
 // describe('fetchWelcomePet', () => {
 
