@@ -3,8 +3,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Profile } from './Profile';
-// import { fetchWelcomePet } from '../../api_calls/api-calls';
-// jest.mock('../../api_calls/api-calls.js');
 
 describe('Profile', () => {
   let wrapper;
