@@ -12,12 +12,31 @@ describe('rootReducer', () => {
     expect(store.getState().loggedIn).toEqual(userReducer.loggedIn(false, {}));
     expect(store.getState().user).toEqual(userReducer.user({}, {}));
     expect(store.getState().pets).toEqual(
-      petsReducer.pets({
-        petsArray: []
-      }, {})
+      petsReducer.pets(
+        {
+          petsArray: []
+        },
+        {}
+      )
     );
-    expect(store.getState().matches).toEqual(
-      userReducer.matches([], {})
-    );
+    expect(store.getState().matches).toEqual(userReducer.matches([], {}));
+  });
+
+  it('returns initial state if passed in an action type of RESET_STORE', () => {
+    const initialState = {};
+    const mockAction = {
+      type: 'RESET_STORE'
+    };
+
+    const result = rootReducer(initialState, mockAction);
+
+    const expected = {
+      loggedIn: false,
+      matches: [],
+      pets: { petsArray: [] },
+      user: {}
+    };
+
+    expect(result).toEqual(expected);
   });
 });

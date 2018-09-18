@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Logo from '../Logo/Logo';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 

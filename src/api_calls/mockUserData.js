@@ -1,6 +1,6 @@
 export const mockUserData = {
   "id": 1,
-  "username": "Bubba",
+  "username": "Theresa",
   "password": "123",
-  "description": "I am Bubba."
+  "description": "I am Theresa"
 };
