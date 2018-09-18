@@ -113,26 +113,51 @@ describe('fetchPets', () => {
   });
 });
 
-// describe('fetchWelcomePet', () => {
+describe('fetchWelcomePet', () => {
+  jest.resetAllMocks();
 
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: true,
-//       json: () => Promise.resolve(mockWelcomePetData)
-//     }));
-//   });
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockWelcomePetData)
+    }));
+  });
 
-//   it.only('should call fetch with the correct params', async () => {
-//     const url = 'https://pet-picker-api.herokuapp.com/api/v1/pets';
-//     await fetchWelcomePet();
+  it('should call fetch with the correct params', async () => {
+    const url = 'https://pet-picker-api.herokuapp.com/api/v1/pets';
 
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   });
+    await fetchWelcomePet();
 
-//   it('should return correct data', async () => {
-//     const expected = mockWelcomePetData;
-//     const result = await fetchWelcomePet();
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
 
-//     expect(result).toEqual(expected);
-//   });
-// });
+  it('should return correct data', async () => {
+    const expected = mockWelcomePetData;
+    
+    const result = await fetchWelcomePet();
+
+    expect(result).toEqual(expected);
+  });
+
+  it('throws an error if response.ok is false', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        status: 500,
+        ok: false,
+        json: () => Promise.resolve({ data: 'mock data' })
+      })
+    );
+
+    const expected = Error(`Network request failed. (error: 500)`);
+    await expect(fetchWelcomePet()).rejects.toEqual(expected);
+  });
+
+  it('throws an error if fetch fails', async () => {
+    window.fetch = jest
+      .fn()
+      .mockImplementation(() => Promise.reject(Error('mock error')));
+    const expected = Error('Network request failed. (error: mock error)');
+
+    await expect(fetchPets()).rejects.toEqual(expected);
+  });
+});
