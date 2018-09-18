@@ -89,6 +89,28 @@ describe('fetchPets', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('throws an error if response.ok is false', async () => {
+    window.fetch = jest.fn().mockImplementation(() =>
+      Promise.resolve({
+        status: 500,
+        ok: false,
+        json: () => Promise.resolve({ data: 'mock data' })
+      })
+    );
+
+    const expected = Error(`Network request failed. (error: 500)`);
+    await expect(fetchPets()).rejects.toEqual(expected);
+  });
+
+  it('throws an error if fetch fails', async () => {
+    window.fetch = jest
+      .fn()
+      .mockImplementation(() => Promise.reject(Error('mock error')));
+    const expected = Error('Network request failed. (error: mock error)');
+
+    await expect(fetchPets()).rejects.toEqual(expected);
+  });
 });
 
 // describe('fetchWelcomePet', () => {
