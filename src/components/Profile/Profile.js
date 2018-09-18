@@ -31,10 +31,9 @@ export class Profile extends Component {
   render() {
     return (
       <div>
-        <p> <button
-          type="submit"
-          onClick={fetchDeleteAccount}
-        >Delete Account</button> </p>
+        <p>
+        <button type="submit" onClick={fetchDeleteAccount}>Delete Account</button>
+        </p>
         <form>
           <section>
             <fieldset>

@@ -81,9 +81,10 @@ export class Login extends Component {
 
   render() {
     return (
-      <div className="login-signup-wrapper">
-        <section className="login">
-          <h1>Login</h1>
+      <div className="login-signup-wrapper row">
+      <div className="col s12 m6">
+        <section className="login card">
+          <h3 className="left">Login</h3>
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -104,12 +105,14 @@ export class Login extends Component {
             <button
               name="submit"
               type="submit"
-              className="loginButton"
+              className="loginButton btn red lighten-1"
             >Login</button>
           </form>
         </section>
-        <section className="sign-up">
-          <h1>Sign Up</h1>
+        </div>
+        <div className="col s12 m6">
+        <section className="sign-up card">
+          <h3 className="left">Sign Up</h3>
           <form
             className="sign-up-form"
             onSubmit={this.handleSignUpSubmit}>
@@ -129,20 +132,19 @@ export class Login extends Component {
               onChange={this.handleChange}
               className="inputField"
             />
-            <fieldset>
-              <legend>Choose Your Role</legend>
-              <p>
-                <label htmlFor="owner">
+            <fieldset className="left">
+
+                <label htmlFor="owner" className="owner-radio">
                   <input className="right" type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
-                  <span> Owner: </span>
+                  <span>Owner</span>
                 </label>
-              </p>
-              <p>
+
+
                 <label htmlFor="adopter">
                   <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange}/>
-                  <span> Adopter </span>
+                  <span>Adopter </span>
                 </label>
-              </p>
+
 
             </fieldset>
             <input
@@ -163,10 +165,11 @@ export class Login extends Component {
             <button
               name="submit"
               type="submit"
-              className="signinButton"
+              className="signinButton btn red lighten-1"
             >Sign In</button>
           </form>
         </section>
+        </div>
       </div >
     );
   }
