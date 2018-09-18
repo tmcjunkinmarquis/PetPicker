@@ -1,5 +1,8 @@
 const fetchUserData = async (username, password) => {
-    const url = `https://pet-picker-api.herokuapp.com/api/v1/users?name=${username}&password=${password}`;
+
+  
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users?name=${username}&password=${password}`;
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
