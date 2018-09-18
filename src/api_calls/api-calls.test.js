@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockUserData, mockPetData } from './mockUserData';
+import { mockUserData, mockPetData, mockWelcomePetData } from './mockData';
 import {
   fetchUserData,
   fetchPets,
@@ -32,7 +32,7 @@ describe('fetchUserData', () => {
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
-  it.skip('should return correct data', async () => {
+  it('should return correct data', async () => {
     const expected = mockUserData;
     const result = await fetchUserData();
 
@@ -45,7 +45,7 @@ describe('fetchPets', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       status: 200,
-      json: () => Promise.resolve(mockPets)
+      json: () => Promise.resolve(mockPetData)
     }));
   });
 
@@ -58,11 +58,34 @@ describe('fetchPets', () => {
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
-  it.skip('should return correct data', async () => {
-    const expected = mockPets;
+  it('should return correct data', async () => {
+    const expected = mockPetData;
     const result = await fetchPets();
 
     expect(result).toEqual(expected);
   });
 });
 
+describe('fetchWelcomePet', () => {
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(mockWelcomePetData)
+    }));
+  });
+
+  it.only('should call fetch with the correct params', async () => {
+    const url = 'https://pet-picker-api.herokuapp.com/api/v1/pets';
+    await fetchWelcomePet();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
+
+  it('should return correct data', async () => {
+    const expected = mockWelcomePetData;
+    const result = await fetchWelcomePet();
+
+    expect(result).toEqual(expected);
+  });
+});
