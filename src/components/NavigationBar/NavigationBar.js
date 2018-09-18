@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 
-class NavigationBar extends Component {
+export class NavigationBar extends Component {
   constructor(props) {
     super();
   }
