@@ -17,18 +17,22 @@ class NavigationBar extends Component {
 
   render() {
     return (
+      <div className="navbar-fixed ">
       <nav>
-        <Logo />
-
+        <div className="container">
+        <div className="Nav-wrapper red lighten-1">
+        <h3 className="left nav-title-pp">Pet Picker</h3>
         {this.props.loggedIn &&
-          <div>
-            <NavLink to='/profile' className='nav'>Profile</NavLink>
-            <NavLink to='/matches' className='nav'>Matches</NavLink>
-            <NavLink to='/pets' className='nav'>Pets</NavLink>
-            <NavLink exact to='/' className='nav' onClick={this.handleLogOut}>Logout</NavLink>
-          </div>}
-
+          <ul className="right">
+            <li><NavLink to='/profile' className='nav'>Profile</NavLink></li>
+            <li><NavLink to='/matches' className='nav'>Matches</NavLink></li>
+            <li><NavLink to='/pets' className='nav'>Pets</NavLink></li>
+            {/* <NavLink to='/logout' className='nav'>Log Out</NavLink> */}
+          </ul>}
+          </div>
+          </div>
       </nav >
+      </div>
     );
   }
 }
@@ -49,4 +53,3 @@ export const mapDispatchToProps = dispatch => ({
 export default withRouter(
   connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
 );
-

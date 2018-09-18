@@ -15,7 +15,7 @@ export const LikeButton = (props) => {
 
   return (
     <button
-      className="button-xlarge pure-button"
+      className="waves-effect waves-light btn-large red lighten-1 nope-like-btn"
       onClick={handleLikeClick}
     >Like</button>
   );

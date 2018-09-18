@@ -32,12 +32,12 @@ export class Matches extends Component {
   render() {
     return (
       <div className="matches">
-        <p>These are your matches!</p>
-        <div>
-          {this.props.matches && this.makeIndividualMatches()}
-        </div>
+      <h3>Matches</h3>
+      <ul className="collection">
+        {this.props.matches && this.makeIndividualMatches()}
+      </ul>
       </div>
-    );
+          );
   }
 }
 

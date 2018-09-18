@@ -26,3 +26,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.nav-title-pp {
+  margin: 0;
+  padding: 0.2em;
+}
+
+.nope-like-btn {
+  margin: 1.0em;
+}
