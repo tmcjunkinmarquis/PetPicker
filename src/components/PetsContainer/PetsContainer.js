@@ -1,6 +1,6 @@
 import React from 'react';
-// import './PetsContainer.css'
 import PetImage from '../PetImage/PetImage';
+import PropTypes from 'prop-types';
 
 const PetsContainer = ({ petsArray, loggedIn }) => {
 
@@ -20,6 +20,11 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
       {makePets(petsArray)}
     </div>
   );
+};
+
+PetsContainer.propTypes = {
+  petsArray: PropTypes.array,
+  loggedIn: PropTypes.bool
 };
 
 export default PetsContainer;

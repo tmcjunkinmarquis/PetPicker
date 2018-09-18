@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDeleteAccount } from '../../api_calls/api-calls';
+import PropTypes from 'prop-types';
 
 export class Profile extends Component {
   constructor() {
@@ -84,6 +85,11 @@ export class Profile extends Component {
     );
   }
 }
+
+Profile.propTypes = {
+  loggedIn: PropTypes.bool,
+  history: PropTypes.object
+};
 
 export const mapStateToProps = (state) => ({
   userId: state.user.userId

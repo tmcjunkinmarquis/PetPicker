@@ -1,5 +1,5 @@
 const fetchUserData = async (username, password) => {
-  //https://pet-picker-api.herokuapp.com/api/v1/users?name=Theresa&password=123
+  
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users?name=${username}&password=${password}`;
   try {
     const response = await fetch(url);
@@ -8,7 +8,6 @@ const fetchUserData = async (username, password) => {
     }
     return await response.json();
   } catch (error) {
-    console.log(error)
     throw Error(`Network request failed. (error: ${error.message})`);
   }
 };
@@ -109,7 +108,6 @@ const fetchDeletePet = async (user_id, id) => {
       "Content-Type": "application/json; charset=utf-8"
     }
   };
-  console.log(`About to nope pet at ${url}`);
   try {
     const response = await fetch(url, optionsObj);
     if (!response.ok) {
@@ -130,7 +128,6 @@ const fetchLikePostPet = async (user_id, id) => {
       "Content-Type": "application/json; charset=utf-8"
     }
   };
-  console.log(`About to like pet at ${url}`);
   try {
     const response = await fetch(url, optionsObj);
     if (!response.ok) {
