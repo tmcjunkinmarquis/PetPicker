@@ -8,6 +8,7 @@ const fetchUserData = async (username, password) => {
     }
     return await response.json();
   } catch (error) {
+    console.log(error)
     throw Error(`Network request failed. (error: ${error.message})`);
   }
 };
