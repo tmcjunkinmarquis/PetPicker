@@ -51,15 +51,22 @@ describe('Actions', () => {
     });
   });
 
-  describe('petsArray', () => {
-    it('has a type of PETS_ARRAY', () => {
-      const petsArray = [];
-
-      const actual = actions.petsArray(petsArray);
+  describe('updatePets', () => {
+    it('has a type of UPDATE_PETS', () => {
+      const actual = actions.updatePets();
 
       expect(actual).toEqual({
-        type: 'PETS_ARRAY',
-        petsArray
+        type: 'UPDATE_PETS',
+      });
+    });
+  });
+
+  describe('resetStore', () => {
+    it('has a type of RESET_STORE', () => {
+      const actual = actions.resetStore();
+
+      expect(actual).toEqual({
+        type: 'RESET_STORE',
       });
     });
   });
