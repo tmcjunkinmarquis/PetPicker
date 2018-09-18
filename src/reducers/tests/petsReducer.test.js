@@ -1,8 +1,13 @@
+/* eslint-disable max-len */
+
 import { pets } from "../petsReducer";
 
-describe('pets', () => {
+describe('Pets', () => {
+  it('should return default state when no action passed', () => {
+    expect(pets([], {})).toEqual([]);
+  });
 
-  it('should add petsArray if pass in an action type of PETS_ARRAY', () => {
+  it('returns petsArray if passed in an action type of PETS_ARRAY', () => {
     const initialState = {
       petsArray: []
     };
@@ -32,19 +37,22 @@ describe('pets', () => {
     expect(result).toEqual(initialState);
   });
 
-  it('should add petsArray if pass in an action type of UPDATE_PETS', () => {
+  it.only('should return petsArray if pass in an action type of UPDATE_PETS', () => {
     const initialState = {
       petsArray: []
     };
-    const newMockState = { ...initialState };
+
     const mockAction = {
       type: 'UPDATE_PETS',
-      petsArray: [{ name: 'Pupper' }]
+      petsArray: [{ name: 'Puppy' }, { name: 'Doodle' }]
     };
 
-    const result = pets(newMockState, mockAction);
+    const expected = { name: 'Doodle' };
 
-    const expected = { petsArray: [{ name: 'Pupper' }] };
+    // const expected = { petsArray: [{ name: 'Pupper' }] };
+
+    const result = pets(initialState, mockAction);
+
 
     expect(result).toEqual(expected);
   });
