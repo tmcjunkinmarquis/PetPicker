@@ -131,18 +131,18 @@ export class Login extends Component {
             />
             <fieldset>
               <legend>Choose Your Role</legend>
-                <p>
-                  <label htmlFor="owner">
-                    <input className="right" type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
-                    <span> Owner: </span>
-                  </label>
-                </p>
-                <p>
-                  <label htmlFor="adopter">
-                    <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange}/>
-                    <span> Adopter </span>
-                  </label>
-                </p>
+              <p>
+                <label htmlFor="owner">
+                  <input className="right" type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
+                  <span> Owner: </span>
+                </label>
+              </p>
+              <p>
+                <label htmlFor="adopter">
+                  <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange}/>
+                  <span> Adopter </span>
+                </label>
+              </p>
 
             </fieldset>
             <input

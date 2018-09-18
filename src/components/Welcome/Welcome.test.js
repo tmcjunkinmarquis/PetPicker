@@ -4,22 +4,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Welcome from './Welcome';
 import { fetchWelcomePet } from '../../api_calls/api-calls';
-jest.mock('../../api_calls/api-calls.js', () => {
-  return {
-    fetchWelcomePet: jest.fn()
-  };
-});
+jest.mock('../../api_calls/api-calls.js');
 
 describe('welcome', () => {
   let wrapper;
   let mockProps;
 
   beforeEach(() => {
+    jest.resetAllMocks();
     mockProps = {};
     wrapper = shallow(<Welcome {...mockProps} />, {
       disableLifecycleMethods: true
     });
-    jest.resetAllMocks();
   });
 
   it('matches the snapshot', () => {
@@ -33,20 +29,20 @@ describe('welcome', () => {
       expect(fetchWelcomePet).toHaveBeenCalledTimes(1);
     });
 
-    it('sets state.pet with pet ', async () => {
-      const expected = {
-        name: 'betsy'
-      };
-
-      console.log('fetchWelcomePet: ', fetchWelcomePet);
-
-      fetchWelcomePet.mockImpementation(() => {
-        return { name: 'betsy' };
-      });
-
+    it('sets state.pet', async () => {
       await wrapper.instance().loadWelcomePet();
 
-      expect(wrapper.state().pet).toEqual(expected);
+      expect(wrapper.state().pet).toEqual(undefined);
+    });
+  });
+
+  describe('componentDidMount', () => {
+    it('calls loadWelcomePet', async () => {
+      const loadWelcomePet = (wrapper.instance().loadWelcomePet = jest.fn());
+
+      await wrapper.instance().componentDidMount();
+
+      expect(loadWelcomePet).toHaveBeenCalledTimes(1);
     });
   });
 });

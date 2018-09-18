@@ -1,15 +1,22 @@
+/* eslint-disable max-len */
+
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
 describe('App', () => {
-  let app;
+  let wrapper;
+  let mockProps;
 
   beforeEach(() => {
-    app = shallow(<App />);
+    jest.resetAllMocks();
+    mockProps = {};
+    wrapper = shallow(<App {...mockProps} />, {
+      disableLifecycleMethods: true
+    });
   });
 
   it('matches the snapshot', () => {
-    expect(app).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });

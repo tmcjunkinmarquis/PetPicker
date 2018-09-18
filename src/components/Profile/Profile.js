@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDeleteAccount } from '../../api_calls/api-calls';
+import PropTypes from 'prop-types';
 
 export class Profile extends Component {
   constructor() {
@@ -32,7 +33,7 @@ export class Profile extends Component {
       <div>
         <p> <button
           type="submit"
-          onClick={this.fetchDeleteAccount}
+          onClick={fetchDeleteAccount}
         >Delete Account</button> </p>
         <form>
           <section>
@@ -85,14 +86,13 @@ export class Profile extends Component {
   }
 }
 
+Profile.propTypes = {
+  loggedIn: PropTypes.bool,
+  history: PropTypes.object
+};
+
 export const mapStateToProps = (state) => ({
-  userId: state.user.userId
+  loggedIn: state.loggedIn
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  //storeUserId: (userId) => dispatch(setUserId(userId)), 
-  // addFavorites: (favoriteMovies) => dispatch(addStoredFavorites(favoriteMovies))
-  //deleteUserId: (userId) => dispatch()
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps)(Profile);
