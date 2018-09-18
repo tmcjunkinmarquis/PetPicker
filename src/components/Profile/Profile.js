@@ -21,6 +21,12 @@ export class Profile extends Component {
     });
   };
 
+  componentDidMount = () => {
+    if (!this.props.loggedIn) {
+      this.props.history.push('/login');
+    }
+  }
+
   render() {
     return (
       <div>

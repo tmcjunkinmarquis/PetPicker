@@ -15,8 +15,6 @@ export class Matches extends Component {
   }
 
   makeIndividualMatches = () => {
-    console.log(this.props.matches);
-
     return this.props.matches.map((match, idx) => {
       return (
         <IndividualMatch
@@ -41,8 +39,13 @@ export class Matches extends Component {
   //   }
   // }
 
-  render() {
+  componentDidMount = () => {
+    if (!this.props.loggedIn) {
+      this.props.history.push('/login');
+    }
+  }
 
+  render() {
     return (
       <div className="matches">
         <p>These are your matches!</p>

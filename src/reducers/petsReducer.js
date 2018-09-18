@@ -1,8 +1,8 @@
-const intialState = {
+const initialState = {
   petsArray: []
 };
 
-export const pets = (state = intialState, action) => {
+export const pets = (state = initialState, action) => {
 
   switch (action.type) {
     case 'PETS_ARRAY':
