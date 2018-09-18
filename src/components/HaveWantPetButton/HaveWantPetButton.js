@@ -7,7 +7,7 @@ const HaveWantPetButton = () => {
   return (
     <NavLink
       to='/login'
-      className="waves-effect waves-light btn-large red lighten-1"> Login / Logout
+      className="waves-effect waves-light btn-large red lighten-1"> Login / Signup
     </NavLink>
   );
 };
