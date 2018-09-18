@@ -18,3 +18,13 @@ export const mockPetData = {
   "description": "I am a cute pupper",
   "pic": "http://www.bubba.com"
 };
+
+export const mockWelcomePetData = {
+  id: 1, 
+  name: "Wanda", 
+  species: 0, 
+  description: "Doggo ipsum heckin angery woofer wow such tempt fl...", 
+  pic: "https://www.cesarsway.com/sites/newcesarsway/files...",  
+  user_id: 4
+};
+
