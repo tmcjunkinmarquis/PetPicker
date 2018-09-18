@@ -139,7 +139,7 @@ export class Login extends Component {
                 </p>
                 <p>
                   <label htmlFor="adopter">
-                    <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange} checked />
+                    <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange}/>
                     <span> Adopter </span>
                   </label>
                 </p>
