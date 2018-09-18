@@ -4,8 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Matches.css';
 import IndividualMatch from '../IndividualMatch/IndividualMatch';
-import { fetchMatches } from '../../api_calls/api-calls';
-import * as actions from '../../actions';
 
 export class Matches extends Component {
   constructor(props) {
@@ -24,20 +22,6 @@ export class Matches extends Component {
       );
     });
   }
-
-  // getMatches = async () => {
-  //   const matches = await fetchMatches(this.props.userId);
-
-  //   this.props.storeMatches(matches);
-  // }
-
-  // async componentDidMount() {
-  //   if (this.props.loggedIn) {
-  //     this.getMatches();
-  //   } else {
-  //     this.props.history.push('/');
-  //   }
-  // }
 
   componentDidMount = () => {
     if (!this.props.loggedIn) {
@@ -63,9 +47,6 @@ export const mapStateToProps = state => ({
   matches: state.matches
 });
 
-export const mapDispatchToProps = dispatch => ({
-});
-
 Matches.propTypes = {
   history: PropTypes.object.isRequired,
   matches: PropTypes.array,
@@ -74,4 +55,4 @@ Matches.propTypes = {
   storeMatches: PropTypes.func
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Matches));
+export default withRouter(connect(mapStateToProps)(Matches));

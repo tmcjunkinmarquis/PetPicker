@@ -4,29 +4,6 @@ import PetImage from '../PetImage/PetImage';
 
 const PetsContainer = ({ petsArray, loggedIn }) => {
 
-  const makeAllPets = (petsArray) => {
-    return petsArray.map((pet, idx) => {
-      
-      if (idx === 0) {
-        return (
-          <PetImage
-            key={idx}
-            pet={pet}
-            display={'show'}
-          />
-        );
-      } else {
-        return (
-          <PetImage
-            key={idx}
-            pet={pet}
-            display={'hidden'}
-          />
-        );
-      }
-    });
-  };
-
   const makePets = (petsArray) => {
     if (petsArray.length) {
       let petZero = petsArray[0];
@@ -35,11 +12,6 @@ const PetsContainer = ({ petsArray, loggedIn }) => {
           <PetImage pet={petZero} />
         );
       }
-      // else {
-      //   return (
-      //     makeAllPets(petsArray)
-      //   );
-      // }
     }
   };
 

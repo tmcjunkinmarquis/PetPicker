@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDeleteAccount } from '../../api_calls/api-calls'
+import { fetchDeleteAccount } from '../../api_calls/api-calls';
 
 export class Profile extends Component {
   constructor() {

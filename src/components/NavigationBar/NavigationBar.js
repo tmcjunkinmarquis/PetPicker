@@ -11,7 +11,6 @@ class NavigationBar extends Component {
   }
 
   handleLogOut = () => {
-    console.log('handleLogOut')
     this.props.resetStore();
     localStorage.clear();
   }
@@ -35,7 +34,8 @@ class NavigationBar extends Component {
 }
 
 NavigationBar.propTypes = {
-  loggedIn: PropTypes.bool
+  loggedIn: PropTypes.bool,
+  resetStore: PropTypes.func
 };
 
 export const mapStateToProps = state => ({

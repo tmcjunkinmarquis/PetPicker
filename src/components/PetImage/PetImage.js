@@ -19,5 +19,7 @@ export default PetImage;
 
 PetImage.propTypes = {
   name: PropTypes.string,
-  pic: PropTypes.string
+  pic: PropTypes.string,
+  display: PropTypes.string,
+  pet: PropTypes.object
 };

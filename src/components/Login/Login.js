@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 // import { Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleLoggedIn, storeUser } from '../../actions';
 import './Login.css';
 import { fetchUserData, fetchSignUp, fetchMatches } from '../../api_calls/api-calls';
-import * as actions from '../../actions';
+import { toggleLoggedIn, storeUser, storeMatches } from '../../actions';
 
 export class Login extends Component {
   constructor(props) {
@@ -41,12 +40,11 @@ export class Login extends Component {
       alert('Please enter a username');
     } else if (this.state.password === "") {
       alert('Please enter a password');
-    }
-    else {
+    } else {
       const userData = await fetchUserData(this.state.username, this.state.password);
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
-      this.getMatches()
+      this.getMatches();
       this.props.history.push('/pets');
 
       // } else {
@@ -137,13 +135,13 @@ export class Login extends Component {
                 <li>
                   <label htmlFor="owner">
                     Owner:
-                  <input type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
+                    <input type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
                   </label>
                 </li>
                 <li>
                   <label htmlFor="adopter">
                     Adopter:
-                  <input type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange} />
+                    <input type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange} />
                   </label>
                 </li>
               </ul>
@@ -182,7 +180,7 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => ({
   toggleLoggedIn: () => dispatch(toggleLoggedIn()),
   storeUser: user => dispatch(storeUser(user)),
-  storeMatches: matchesArray => dispatch(actions.storeMatches(matchesArray))
+  storeMatches: matchesArray => dispatch(storeMatches(matchesArray))
 });
 
 Login.propTypes = {
@@ -190,6 +188,7 @@ Login.propTypes = {
   storeUser: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
   storeMatches: PropTypes.func.isRequired,
+  userId: PropTypes.number
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

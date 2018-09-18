@@ -16,12 +16,11 @@ const fetchPets = async (id) => {
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/pets`;
   try {
     const response = await fetch(url);
-    console.log('fetchPets response: ', response)
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
-    const data = await response.json();
-    return data
+    const petsData = await response.json();
+    return petsData;
   } catch (error) {
     throw Error(`Network request failed. (error: ${error.message})`);
   }
@@ -66,14 +65,27 @@ const fetchMatches = async (id) => {
   }
 };
 
-const fetchSignUp = async (user, password, role, description, pic) => {
+const fetchPostNewMatch = async (id) => {
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(`${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    throw Error(`Network request failed. (error: ${error.message})`);
+  }
+};
+
+const fetchSignUp = async (name, password, role, description, pic) => {
   const url = 'https://pet-picker-api.herokuapp.com/api/v1/users';
   const optionsObj = {
     method: "POST",
     headers: {
       "Content-Type": "application/json; charset=utf-8"
     },
-    body: JSON.stringify({ user: { user, password, role, description, pic } })
+    body: JSON.stringify({ user: { name, password, role, description, pic } })
   };
   try {
     const response = await fetch(url, optionsObj);
@@ -134,5 +146,6 @@ export {
   fetchMatches,
   fetchSignUp,
   fetchDeletePet,
-  fetchLikePostPet
+  fetchLikePostPet,
+  fetchPostNewMatch
 };

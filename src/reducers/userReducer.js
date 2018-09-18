@@ -19,7 +19,6 @@ export const user = (state = {}, action) => {
 export const matches = (state = [], action) => {
   switch (action.type) {
     case 'STORE_MATCHES':
-      console.log('action.matchesArray: ', action.matchesArray);
       return action.matchesArray;
     default:
       return state;

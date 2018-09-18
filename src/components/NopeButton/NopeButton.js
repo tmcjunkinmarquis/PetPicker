@@ -11,7 +11,7 @@ export const NopeButton = (props) => {
       await fetchDeletePet(props.userId, props.petsArray[0].id);
       props.updatePets();
     }
-  }
+  };
 
   return (
     <button

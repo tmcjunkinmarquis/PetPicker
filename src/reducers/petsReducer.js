@@ -8,7 +8,7 @@ export const pets = (state = initialState, action) => {
     case 'PETS_ARRAY':
       return { ...state, petsArray: action.petsArray };
     case 'UPDATE_PETS': {
-      const newState = { ...state }
+      const newState = { ...state };
       const petsArray = newState.petsArray.slice(1);
       return { ...newState, petsArray };
     }

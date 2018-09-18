@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 
 
 const IndividualMatch = ({ match }) => {
-  console.log('in match: ', match);
-
   return (
     <div className='individual-match'>
       <img
