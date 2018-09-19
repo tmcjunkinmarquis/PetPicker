@@ -17,59 +17,51 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h1>
-          Welcome to Pet Picker!
-</h1>,
-        <div>
-          <PetImage
-                    pet={Object {}}
-          />
+      "children": <div
+        className="nope-or-like"
+>
+        <withRouter(HaveWantPetButton) />
 </div>,
-        <div
+      "className": "welcome valign-wrapper",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <withRouter(HaveWantPetButton) />,
+        "className": "nope-or-like",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
           className="nope-or-like"
 >
           <withRouter(HaveWantPetButton) />
 </div>,
-      ],
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Welcome to Pet Picker!",
-        },
-        "ref": null,
-        "rendered": "Welcome to Pet Picker!",
-        "type": "h1",
+        "className": "welcome valign-wrapper",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <PetImage
-            pet={Object {}}
-/>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "pet": Object {},
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": "div",
-      },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
@@ -89,88 +81,6 @@ ShallowWrapper {
         },
         "type": "div",
       },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h1>
-            Welcome to Pet Picker!
-</h1>,
-          <div>
-            <PetImage
-                        pet={Object {}}
-            />
-</div>,
-          <div
-            className="nope-or-like"
->
-            <withRouter(HaveWantPetButton) />
-</div>,
-        ],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Welcome to Pet Picker!",
-          },
-          "ref": null,
-          "rendered": "Welcome to Pet Picker!",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <PetImage
-              pet={Object {}}
-/>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "pet": Object {},
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <withRouter(HaveWantPetButton) />,
-            "className": "nope-or-like",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {},
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
-        },
-      ],
       "type": "div",
     },
   ],

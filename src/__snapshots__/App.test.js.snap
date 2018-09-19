@@ -19,14 +19,14 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <withRouter(Connect(NavigationBar)) />,
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+/>,
         <div
           className="container"
 >
-          <Route
-                    component={[Function]}
-                    exact={true}
-                    path="/"
-          />
           <Route
                     component={[Function]}
                     path="/profile"
@@ -62,14 +62,22 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "component": [Function],
+          "exact": true,
+          "path": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <Route
-              component={[Function]}
-              exact={true}
-              path="/"
-/>,
             <Route
               component={[Function]}
               path="/profile"
@@ -92,19 +100,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "component": [Function],
-              "exact": true,
-              "path": "/",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -168,14 +163,14 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <withRouter(Connect(NavigationBar)) />,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+/>,
           <div
             className="container"
 >
-            <Route
-                        component={[Function]}
-                        exact={true}
-                        path="/"
-            />
             <Route
                         component={[Function]}
                         path="/profile"
@@ -211,14 +206,22 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <Route
-                component={[Function]}
-                exact={true}
-                path="/"
-/>,
               <Route
                 component={[Function]}
                 path="/profile"
@@ -241,19 +244,6 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "component": [Function],
-                "exact": true,
-                "path": "/",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
             Object {
               "instance": null,
               "key": undefined,

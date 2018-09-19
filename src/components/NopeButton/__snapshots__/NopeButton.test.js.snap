@@ -28,7 +28,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": "Nope",
-      "className": "waves-effect waves-light btn-large red lighten-1 nope-like-btn",
+      "className": "waves-effect waves-light btn-large red lighten-1 nope-like-btn hoverable",
       "onClick": [Function],
     },
     "ref": null,
@@ -42,7 +42,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": "Nope",
-        "className": "waves-effect waves-light btn-large red lighten-1 nope-like-btn",
+        "className": "waves-effect waves-light btn-large red lighten-1 nope-like-btn hoverable",
         "onClick": [Function],
       },
       "ref": null,

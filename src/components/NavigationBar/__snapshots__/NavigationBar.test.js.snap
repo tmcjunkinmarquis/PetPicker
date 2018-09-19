@@ -20,22 +20,25 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <nav>
+      "children": <nav
+        className="red lighten-1"
+>
         <div
                 className="container"
         >
                 <div
-                        className="Nav-wrapper red lighten-1"
+                        className="Nav-wrapper"
                 >
-                        <h3
-                                className="left nav-title-pp"
-                        >
-                                Pet Picker
-                        </h3>
+                        <img
+                                className="left logo"
+                                height="50"
+                                src="/PetPicker.png"
+                                width="200"
+                        />
                 </div>
         </div>
 </nav>,
-      "className": "navbar-fixed ",
+      "className": "navbar-fixed",
     },
     "ref": null,
     "rendered": Object {
@@ -47,15 +50,17 @@ ShallowWrapper {
           className="container"
 >
           <div
-                    className="Nav-wrapper red lighten-1"
+                    className="Nav-wrapper"
           >
-                    <h3
-                              className="left nav-title-pp"
-                    >
-                              Pet Picker
-                    </h3>
+                    <img
+                              className="left logo"
+                              height="50"
+                              src="/PetPicker.png"
+                              width="200"
+                    />
           </div>
 </div>,
+        "className": "red lighten-1",
       },
       "ref": null,
       "rendered": Object {
@@ -64,13 +69,14 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <div
-            className="Nav-wrapper red lighten-1"
+            className="Nav-wrapper"
 >
-            <h3
-                        className="left nav-title-pp"
-            >
-                        Pet Picker
-            </h3>
+            <img
+                        className="left logo"
+                        height="50"
+                        src="/PetPicker.png"
+                        width="200"
+            />
 </div>,
           "className": "container",
         },
@@ -81,14 +87,15 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h3
-                className="left nav-title-pp"
->
-                Pet Picker
-</h3>,
+              <img
+                className="left logo"
+                height="50"
+                src="/PetPicker.png"
+                width="200"
+/>,
               false,
             ],
-            "className": "Nav-wrapper red lighten-1",
+            "className": "Nav-wrapper",
           },
           "ref": null,
           "rendered": Array [
@@ -97,12 +104,14 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Pet Picker",
-                "className": "left nav-title-pp",
+                "className": "left logo",
+                "height": "50",
+                "src": "/PetPicker.png",
+                "width": "200",
               },
               "ref": null,
-              "rendered": "Pet Picker",
-              "type": "h3",
+              "rendered": null,
+              "type": "img",
             },
             false,
           ],
@@ -120,22 +129,25 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <nav>
+        "children": <nav
+          className="red lighten-1"
+>
           <div
                     className="container"
           >
                     <div
-                              className="Nav-wrapper red lighten-1"
+                              className="Nav-wrapper"
                     >
-                              <h3
-                                        className="left nav-title-pp"
-                              >
-                                        Pet Picker
-                              </h3>
+                              <img
+                                        className="left logo"
+                                        height="50"
+                                        src="/PetPicker.png"
+                                        width="200"
+                              />
                     </div>
           </div>
 </nav>,
-        "className": "navbar-fixed ",
+        "className": "navbar-fixed",
       },
       "ref": null,
       "rendered": Object {
@@ -147,15 +159,17 @@ ShallowWrapper {
             className="container"
 >
             <div
-                        className="Nav-wrapper red lighten-1"
+                        className="Nav-wrapper"
             >
-                        <h3
-                                    className="left nav-title-pp"
-                        >
-                                    Pet Picker
-                        </h3>
+                        <img
+                                    className="left logo"
+                                    height="50"
+                                    src="/PetPicker.png"
+                                    width="200"
+                        />
             </div>
 </div>,
+          "className": "red lighten-1",
         },
         "ref": null,
         "rendered": Object {
@@ -164,13 +178,14 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <div
-              className="Nav-wrapper red lighten-1"
+              className="Nav-wrapper"
 >
-              <h3
-                            className="left nav-title-pp"
-              >
-                            Pet Picker
-              </h3>
+              <img
+                            className="left logo"
+                            height="50"
+                            src="/PetPicker.png"
+                            width="200"
+              />
 </div>,
             "className": "container",
           },
@@ -181,14 +196,15 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": Array [
-                <h3
-                  className="left nav-title-pp"
->
-                  Pet Picker
-</h3>,
+                <img
+                  className="left logo"
+                  height="50"
+                  src="/PetPicker.png"
+                  width="200"
+/>,
                 false,
               ],
-              "className": "Nav-wrapper red lighten-1",
+              "className": "Nav-wrapper",
             },
             "ref": null,
             "rendered": Array [
@@ -197,12 +213,14 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Pet Picker",
-                  "className": "left nav-title-pp",
+                  "className": "left logo",
+                  "height": "50",
+                  "src": "/PetPicker.png",
+                  "width": "200",
                 },
                 "ref": null,
-                "rendered": "Pet Picker",
-                "type": "h3",
+                "rendered": null,
+                "type": "img",
               },
               false,
             ],

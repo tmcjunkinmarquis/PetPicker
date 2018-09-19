@@ -28,72 +28,82 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <section
-          className="login"
+        <div
+          className="col s12 m6"
 >
-          <h1>
-                    Login
-          </h1>
-          <form
-                    onSubmit={[Function]}
+          <section
+                    className="login card grey lighten-5"
           >
-                    <input
-                              className="inputField"
-                              name="username"
-                              onChange={[Function]}
-                              placeholder="Enter Username"
-                              type="text"
-                              value=""
-                    />
-                    <input
-                              className="inputField"
-                              name="password"
-                              onChange={[Function]}
-                              placeholder="Enter Password"
-                              type="password"
-                              value=""
-                    />
-                    <button
-                              className="loginButton"
-                              name="submit"
-                              type="submit"
+                    <h5
+                              className="left"
                     >
                               Login
-                    </button>
-          </form>
-</section>,
-        <section
-          className="sign-up"
+                    </h5>
+                    <form
+                              onSubmit={[Function]}
+                    >
+                              <input
+                                        className="inputField"
+                                        name="username"
+                                        onChange={[Function]}
+                                        placeholder="Enter Username"
+                                        type="text"
+                                        value=""
+                              />
+                              <input
+                                        className="inputField"
+                                        name="password"
+                                        onChange={[Function]}
+                                        placeholder="Enter Password"
+                                        type="password"
+                                        value=""
+                              />
+                              <button
+                                        className="loginButton btn red lighten-1"
+                                        name="submit"
+                                        type="submit"
+                              >
+                                        Login
+                              </button>
+                    </form>
+          </section>
+</div>,
+        <div
+          className="col s12 m6"
 >
-          <h1>
-                    Sign Up
-          </h1>
-          <form
-                    className="sign-up-form"
-                    onSubmit={[Function]}
+          <section
+                    className="sign-up card grey lighten-5"
           >
-                    <input
-                              className="inputField"
-                              name="newUsername"
-                              onChange={[Function]}
-                              placeholder="Choose Username"
-                              type="text"
-                              value=""
-                    />
-                    <input
-                              className="inputField"
-                              name="newPassword"
-                              onChange={[Function]}
-                              placeholder="Choose Password"
-                              type="password"
-                              value=""
-                    />
-                    <fieldset>
-                              <legend>
-                                        Choose Your Role
-                              </legend>
-                              <p>
+                    <h5
+                              className="left"
+                    >
+                              Sign Up
+                    </h5>
+                    <form
+                              className="sign-up-form"
+                              onSubmit={[Function]}
+                    >
+                              <input
+                                        className="inputField"
+                                        name="newUsername"
+                                        onChange={[Function]}
+                                        placeholder="Choose Username"
+                                        type="text"
+                                        value=""
+                              />
+                              <input
+                                        className="inputField"
+                                        name="newPassword"
+                                        onChange={[Function]}
+                                        placeholder="Choose Password"
+                                        type="password"
+                                        value=""
+                              />
+                              <fieldset
+                                        className="left"
+                              >
                                         <label
+                                                  className="owner-radio"
                                                   htmlFor="owner"
                                         >
                                                   <input
@@ -105,11 +115,9 @@ ShallowWrapper {
                                                             value="Owner"
                                                   />
                                                   <span>
-                                                             Owner: 
+                                                            Owner
                                                   </span>
                                         </label>
-                              </p>
-                              <p>
                                         <label
                                                   htmlFor="adopter"
                                         >
@@ -122,37 +130,37 @@ ShallowWrapper {
                                                             value="Adopter"
                                                   />
                                                   <span>
-                                                             Adopter 
+                                                            Adopter 
                                                   </span>
                                         </label>
-                              </p>
-                    </fieldset>
-                    <input
-                              className="inputField"
-                              name="description"
-                              onChange={[Function]}
-                              placeholder="Enter Description"
-                              value=""
-                    />
-                    <input
-                              className="inputField"
-                              name="pic"
-                              onChange={[Function]}
-                              placeholder="Enter URL to image"
-                              type="url"
-                              value=""
-                    />
-                    <button
-                              className="signinButton"
-                              name="submit"
-                              type="submit"
-                    >
-                              Sign In
-                    </button>
-          </form>
-</section>,
+                              </fieldset>
+                              <input
+                                        className="inputField"
+                                        name="description"
+                                        onChange={[Function]}
+                                        placeholder="Enter Description"
+                                        value=""
+                              />
+                              <input
+                                        className="inputField"
+                                        name="pic"
+                                        onChange={[Function]}
+                                        placeholder="Enter URL to image"
+                                        type="url"
+                                        value=""
+                              />
+                              <button
+                                        className="signinButton btn red lighten-1"
+                                        name="submit"
+                                        type="submit"
+                              >
+                                        Sign In
+                              </button>
+                    </form>
+          </section>
+</div>,
       ],
-      "className": "login-signup-wrapper",
+      "className": "login-signup-wrapper row",
     },
     "ref": null,
     "rendered": Array [
@@ -161,647 +169,14 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <h1>
-              Login
-</h1>,
-            <form
-              onSubmit={[Function]}
+          "children": <section
+            className="login card grey lighten-5"
 >
-              <input
-                            className="inputField"
-                            name="username"
-                            onChange={[Function]}
-                            placeholder="Enter Username"
-                            type="text"
-                            value=""
-              />
-              <input
-                            className="inputField"
-                            name="password"
-                            onChange={[Function]}
-                            placeholder="Enter Password"
-                            type="password"
-                            value=""
-              />
-              <button
-                            className="loginButton"
-                            name="submit"
-                            type="submit"
-              >
-                            Login
-              </button>
-</form>,
-          ],
-          "className": "login",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Login",
-            },
-            "ref": null,
-            "rendered": "Login",
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <input
-                  className="inputField"
-                  name="username"
-                  onChange={[Function]}
-                  placeholder="Enter Username"
-                  type="text"
-                  value=""
-/>,
-                <input
-                  className="inputField"
-                  name="password"
-                  onChange={[Function]}
-                  placeholder="Enter Password"
-                  type="password"
-                  value=""
-/>,
-                <button
-                  className="loginButton"
-                  name="submit"
-                  type="submit"
->
-                  Login
-</button>,
-              ],
-              "onSubmit": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "username",
-                  "onChange": [Function],
-                  "placeholder": "Enter Username",
-                  "type": "text",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "password",
-                  "onChange": [Function],
-                  "placeholder": "Enter Password",
-                  "type": "password",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Login",
-                  "className": "loginButton",
-                  "name": "submit",
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": "Login",
-                "type": "button",
-              },
-            ],
-            "type": "form",
-          },
-        ],
-        "type": "section",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h1>
-              Sign Up
-</h1>,
-            <form
-              className="sign-up-form"
-              onSubmit={[Function]}
->
-              <input
-                            className="inputField"
-                            name="newUsername"
-                            onChange={[Function]}
-                            placeholder="Choose Username"
-                            type="text"
-                            value=""
-              />
-              <input
-                            className="inputField"
-                            name="newPassword"
-                            onChange={[Function]}
-                            placeholder="Choose Password"
-                            type="password"
-                            value=""
-              />
-              <fieldset>
-                            <legend>
-                                          Choose Your Role
-                            </legend>
-                            <p>
-                                          <label
-                                                        htmlFor="owner"
-                                          >
-                                                        <input
-                                                                      className="right"
-                                                                      id="owner"
-                                                                      name="role"
-                                                                      onChange={[Function]}
-                                                                      type="radio"
-                                                                      value="Owner"
-                                                        />
-                                                        <span>
-                                                                       Owner: 
-                                                        </span>
-                                          </label>
-                            </p>
-                            <p>
-                                          <label
-                                                        htmlFor="adopter"
-                                          >
-                                                        <input
-                                                                      className="right"
-                                                                      id="adopter"
-                                                                      name="role"
-                                                                      onChange={[Function]}
-                                                                      type="radio"
-                                                                      value="Adopter"
-                                                        />
-                                                        <span>
-                                                                       Adopter 
-                                                        </span>
-                                          </label>
-                            </p>
-              </fieldset>
-              <input
-                            className="inputField"
-                            name="description"
-                            onChange={[Function]}
-                            placeholder="Enter Description"
-                            value=""
-              />
-              <input
-                            className="inputField"
-                            name="pic"
-                            onChange={[Function]}
-                            placeholder="Enter URL to image"
-                            type="url"
-                            value=""
-              />
-              <button
-                            className="signinButton"
-                            name="submit"
-                            type="submit"
-              >
-                            Sign In
-              </button>
-</form>,
-          ],
-          "className": "sign-up",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Sign Up",
-            },
-            "ref": null,
-            "rendered": "Sign Up",
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                <input
-                  className="inputField"
-                  name="newUsername"
-                  onChange={[Function]}
-                  placeholder="Choose Username"
-                  type="text"
-                  value=""
-/>,
-                <input
-                  className="inputField"
-                  name="newPassword"
-                  onChange={[Function]}
-                  placeholder="Choose Password"
-                  type="password"
-                  value=""
-/>,
-                <fieldset>
-                  <legend>
-                                    Choose Your Role
-                  </legend>
-                  <p>
-                                    <label
-                                                      htmlFor="owner"
-                                    >
-                                                      <input
-                                                                        className="right"
-                                                                        id="owner"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Owner"
-                                                      />
-                                                      <span>
-                                                                         Owner: 
-                                                      </span>
-                                    </label>
-                  </p>
-                  <p>
-                                    <label
-                                                      htmlFor="adopter"
-                                    >
-                                                      <input
-                                                                        className="right"
-                                                                        id="adopter"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Adopter"
-                                                      />
-                                                      <span>
-                                                                         Adopter 
-                                                      </span>
-                                    </label>
-                  </p>
-</fieldset>,
-                <input
-                  className="inputField"
-                  name="description"
-                  onChange={[Function]}
-                  placeholder="Enter Description"
-                  value=""
-/>,
-                <input
-                  className="inputField"
-                  name="pic"
-                  onChange={[Function]}
-                  placeholder="Enter URL to image"
-                  type="url"
-                  value=""
-/>,
-                <button
-                  className="signinButton"
-                  name="submit"
-                  type="submit"
->
-                  Sign In
-</button>,
-              ],
-              "className": "sign-up-form",
-              "onSubmit": [Function],
-            },
-            "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "newUsername",
-                  "onChange": [Function],
-                  "placeholder": "Choose Username",
-                  "type": "text",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "newPassword",
-                  "onChange": [Function],
-                  "placeholder": "Choose Password",
-                  "type": "password",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <legend>
-                      Choose Your Role
-</legend>,
-                    <p>
-                      <label
-                                            htmlFor="owner"
-                      >
-                                            <input
-                                                                  className="right"
-                                                                  id="owner"
-                                                                  name="role"
-                                                                  onChange={[Function]}
-                                                                  type="radio"
-                                                                  value="Owner"
-                                            />
-                                            <span>
-                                                                   Owner: 
-                                            </span>
-                      </label>
-</p>,
-                    <p>
-                      <label
-                                            htmlFor="adopter"
-                      >
-                                            <input
-                                                                  className="right"
-                                                                  id="adopter"
-                                                                  name="role"
-                                                                  onChange={[Function]}
-                                                                  type="radio"
-                                                                  value="Adopter"
-                                            />
-                                            <span>
-                                                                   Adopter 
-                                            </span>
-                      </label>
-</p>,
-                  ],
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "Choose Your Role",
-                    },
-                    "ref": null,
-                    "rendered": "Choose Your Role",
-                    "type": "legend",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <label
-                        htmlFor="owner"
->
-                        <input
-                                                className="right"
-                                                id="owner"
-                                                name="role"
-                                                onChange={[Function]}
-                                                type="radio"
-                                                value="Owner"
-                        />
-                        <span>
-                                                 Owner: 
-                        </span>
-</label>,
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <input
-                            className="right"
-                            id="owner"
-                            name="role"
-                            onChange={[Function]}
-                            type="radio"
-                            value="Owner"
-/>,
-                          <span>
-                             Owner: 
-</span>,
-                        ],
-                        "htmlFor": "owner",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "className": "right",
-                            "id": "owner",
-                            "name": "role",
-                            "onChange": [Function],
-                            "type": "radio",
-                            "value": "Owner",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": "input",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": " Owner: ",
-                          },
-                          "ref": null,
-                          "rendered": " Owner: ",
-                          "type": "span",
-                        },
-                      ],
-                      "type": "label",
-                    },
-                    "type": "p",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": <label
-                        htmlFor="adopter"
->
-                        <input
-                                                className="right"
-                                                id="adopter"
-                                                name="role"
-                                                onChange={[Function]}
-                                                type="radio"
-                                                value="Adopter"
-                        />
-                        <span>
-                                                 Adopter 
-                        </span>
-</label>,
-                    },
-                    "ref": null,
-                    "rendered": Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": Array [
-                          <input
-                            className="right"
-                            id="adopter"
-                            name="role"
-                            onChange={[Function]}
-                            type="radio"
-                            value="Adopter"
-/>,
-                          <span>
-                             Adopter 
-</span>,
-                        ],
-                        "htmlFor": "adopter",
-                      },
-                      "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "className": "right",
-                            "id": "adopter",
-                            "name": "role",
-                            "onChange": [Function],
-                            "type": "radio",
-                            "value": "Adopter",
-                          },
-                          "ref": null,
-                          "rendered": null,
-                          "type": "input",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": " Adopter ",
-                          },
-                          "ref": null,
-                          "rendered": " Adopter ",
-                          "type": "span",
-                        },
-                      ],
-                      "type": "label",
-                    },
-                    "type": "p",
-                  },
-                ],
-                "type": "fieldset",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "description",
-                  "onChange": [Function],
-                  "placeholder": "Enter Description",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "inputField",
-                  "name": "pic",
-                  "onChange": [Function],
-                  "placeholder": "Enter URL to image",
-                  "type": "url",
-                  "value": "",
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Sign In",
-                  "className": "signinButton",
-                  "name": "submit",
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": "Sign In",
-                "type": "button",
-              },
-            ],
-            "type": "form",
-          },
-        ],
-        "type": "section",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <section
-            className="login"
->
-            <h1>
+            <h5
+                        className="left"
+            >
                         Login
-            </h1>
+            </h5>
             <form
                         onSubmit={[Function]}
             >
@@ -822,7 +197,7 @@ ShallowWrapper {
                                     value=""
                         />
                         <button
-                                    className="loginButton"
+                                    className="loginButton btn red lighten-1"
                                     name="submit"
                                     type="submit"
                         >
@@ -830,109 +205,20 @@ ShallowWrapper {
                         </button>
             </form>
 </section>,
-          <section
-            className="sign-up"
->
-            <h1>
-                        Sign Up
-            </h1>
-            <form
-                        className="sign-up-form"
-                        onSubmit={[Function]}
-            >
-                        <input
-                                    className="inputField"
-                                    name="newUsername"
-                                    onChange={[Function]}
-                                    placeholder="Choose Username"
-                                    type="text"
-                                    value=""
-                        />
-                        <input
-                                    className="inputField"
-                                    name="newPassword"
-                                    onChange={[Function]}
-                                    placeholder="Choose Password"
-                                    type="password"
-                                    value=""
-                        />
-                        <fieldset>
-                                    <legend>
-                                                Choose Your Role
-                                    </legend>
-                                    <p>
-                                                <label
-                                                            htmlFor="owner"
-                                                >
-                                                            <input
-                                                                        className="right"
-                                                                        id="owner"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Owner"
-                                                            />
-                                                            <span>
-                                                                         Owner: 
-                                                            </span>
-                                                </label>
-                                    </p>
-                                    <p>
-                                                <label
-                                                            htmlFor="adopter"
-                                                >
-                                                            <input
-                                                                        className="right"
-                                                                        id="adopter"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Adopter"
-                                                            />
-                                                            <span>
-                                                                         Adopter 
-                                                            </span>
-                                                </label>
-                                    </p>
-                        </fieldset>
-                        <input
-                                    className="inputField"
-                                    name="description"
-                                    onChange={[Function]}
-                                    placeholder="Enter Description"
-                                    value=""
-                        />
-                        <input
-                                    className="inputField"
-                                    name="pic"
-                                    onChange={[Function]}
-                                    placeholder="Enter URL to image"
-                                    type="url"
-                                    value=""
-                        />
-                        <button
-                                    className="signinButton"
-                                    name="submit"
-                                    type="submit"
-                        >
-                                    Sign In
-                        </button>
-            </form>
-</section>,
-        ],
-        "className": "login-signup-wrapper",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
+          "className": "col s12 m6",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h1>
+              <h5
+                className="left"
+>
                 Login
-</h1>,
+</h5>,
               <form
                 onSubmit={[Function]}
 >
@@ -953,7 +239,7 @@ ShallowWrapper {
                                 value=""
                 />
                 <button
-                                className="loginButton"
+                                className="loginButton btn red lighten-1"
                                 name="submit"
                                 type="submit"
                 >
@@ -961,7 +247,7 @@ ShallowWrapper {
                 </button>
 </form>,
             ],
-            "className": "login",
+            "className": "login card grey lighten-5",
           },
           "ref": null,
           "rendered": Array [
@@ -971,10 +257,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Login",
+                "className": "left",
               },
               "ref": null,
               "rendered": "Login",
-              "type": "h1",
+              "type": "h5",
             },
             Object {
               "instance": null,
@@ -999,7 +286,7 @@ ShallowWrapper {
                     value=""
 />,
                   <button
-                    className="loginButton"
+                    className="loginButton btn red lighten-1"
                     name="submit"
                     type="submit"
 >
@@ -1048,7 +335,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Login",
-                    "className": "loginButton",
+                    "className": "loginButton btn red lighten-1",
                     "name": "submit",
                     "type": "submit",
                   },
@@ -1062,15 +349,114 @@ ShallowWrapper {
           ],
           "type": "section",
         },
-        Object {
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <section
+            className="sign-up card grey lighten-5"
+>
+            <h5
+                        className="left"
+            >
+                        Sign Up
+            </h5>
+            <form
+                        className="sign-up-form"
+                        onSubmit={[Function]}
+            >
+                        <input
+                                    className="inputField"
+                                    name="newUsername"
+                                    onChange={[Function]}
+                                    placeholder="Choose Username"
+                                    type="text"
+                                    value=""
+                        />
+                        <input
+                                    className="inputField"
+                                    name="newPassword"
+                                    onChange={[Function]}
+                                    placeholder="Choose Password"
+                                    type="password"
+                                    value=""
+                        />
+                        <fieldset
+                                    className="left"
+                        >
+                                    <label
+                                                className="owner-radio"
+                                                htmlFor="owner"
+                                    >
+                                                <input
+                                                            className="right"
+                                                            id="owner"
+                                                            name="role"
+                                                            onChange={[Function]}
+                                                            type="radio"
+                                                            value="Owner"
+                                                />
+                                                <span>
+                                                            Owner
+                                                </span>
+                                    </label>
+                                    <label
+                                                htmlFor="adopter"
+                                    >
+                                                <input
+                                                            className="right"
+                                                            id="adopter"
+                                                            name="role"
+                                                            onChange={[Function]}
+                                                            type="radio"
+                                                            value="Adopter"
+                                                />
+                                                <span>
+                                                            Adopter 
+                                                </span>
+                                    </label>
+                        </fieldset>
+                        <input
+                                    className="inputField"
+                                    name="description"
+                                    onChange={[Function]}
+                                    placeholder="Enter Description"
+                                    value=""
+                        />
+                        <input
+                                    className="inputField"
+                                    name="pic"
+                                    onChange={[Function]}
+                                    placeholder="Enter URL to image"
+                                    type="url"
+                                    value=""
+                        />
+                        <button
+                                    className="signinButton btn red lighten-1"
+                                    name="submit"
+                                    type="submit"
+                        >
+                                    Sign In
+                        </button>
+            </form>
+</section>,
+          "className": "col s12 m6",
+        },
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h1>
+              <h5
+                className="left"
+>
                 Sign Up
-</h1>,
+</h5>,
               <form
                 className="sign-up-form"
                 onSubmit={[Function]}
@@ -1091,44 +477,40 @@ ShallowWrapper {
                                 type="password"
                                 value=""
                 />
-                <fieldset>
-                                <legend>
-                                                Choose Your Role
-                                </legend>
-                                <p>
-                                                <label
-                                                                htmlFor="owner"
-                                                >
-                                                                <input
-                                                                                className="right"
-                                                                                id="owner"
-                                                                                name="role"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value="Owner"
-                                                                />
-                                                                <span>
-                                                                                 Owner: 
-                                                                </span>
-                                                </label>
-                                </p>
-                                <p>
-                                                <label
-                                                                htmlFor="adopter"
-                                                >
-                                                                <input
-                                                                                className="right"
-                                                                                id="adopter"
-                                                                                name="role"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value="Adopter"
-                                                                />
-                                                                <span>
-                                                                                 Adopter 
-                                                                </span>
-                                                </label>
-                                </p>
+                <fieldset
+                                className="left"
+                >
+                                <label
+                                                className="owner-radio"
+                                                htmlFor="owner"
+                                >
+                                                <input
+                                                                className="right"
+                                                                id="owner"
+                                                                name="role"
+                                                                onChange={[Function]}
+                                                                type="radio"
+                                                                value="Owner"
+                                                />
+                                                <span>
+                                                                Owner
+                                                </span>
+                                </label>
+                                <label
+                                                htmlFor="adopter"
+                                >
+                                                <input
+                                                                className="right"
+                                                                id="adopter"
+                                                                name="role"
+                                                                onChange={[Function]}
+                                                                type="radio"
+                                                                value="Adopter"
+                                                />
+                                                <span>
+                                                                Adopter 
+                                                </span>
+                                </label>
                 </fieldset>
                 <input
                                 className="inputField"
@@ -1146,7 +528,7 @@ ShallowWrapper {
                                 value=""
                 />
                 <button
-                                className="signinButton"
+                                className="signinButton btn red lighten-1"
                                 name="submit"
                                 type="submit"
                 >
@@ -1154,7 +536,7 @@ ShallowWrapper {
                 </button>
 </form>,
             ],
-            "className": "sign-up",
+            "className": "sign-up card grey lighten-5",
           },
           "ref": null,
           "rendered": Array [
@@ -1164,10 +546,11 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Sign Up",
+                "className": "left",
               },
               "ref": null,
               "rendered": "Sign Up",
-              "type": "h1",
+              "type": "h5",
             },
             Object {
               "instance": null,
@@ -1191,44 +574,40 @@ ShallowWrapper {
                     type="password"
                     value=""
 />,
-                  <fieldset>
-                    <legend>
-                                        Choose Your Role
-                    </legend>
-                    <p>
-                                        <label
-                                                            htmlFor="owner"
-                                        >
-                                                            <input
-                                                                                className="right"
-                                                                                id="owner"
-                                                                                name="role"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value="Owner"
-                                                            />
-                                                            <span>
-                                                                                 Owner: 
-                                                            </span>
-                                        </label>
-                    </p>
-                    <p>
-                                        <label
-                                                            htmlFor="adopter"
-                                        >
-                                                            <input
-                                                                                className="right"
-                                                                                id="adopter"
-                                                                                name="role"
-                                                                                onChange={[Function]}
-                                                                                type="radio"
-                                                                                value="Adopter"
-                                                            />
-                                                            <span>
-                                                                                 Adopter 
-                                                            </span>
-                                        </label>
-                    </p>
+                  <fieldset
+                    className="left"
+>
+                    <label
+                                        className="owner-radio"
+                                        htmlFor="owner"
+                    >
+                                        <input
+                                                            className="right"
+                                                            id="owner"
+                                                            name="role"
+                                                            onChange={[Function]}
+                                                            type="radio"
+                                                            value="Owner"
+                                        />
+                                        <span>
+                                                            Owner
+                                        </span>
+                    </label>
+                    <label
+                                        htmlFor="adopter"
+                    >
+                                        <input
+                                                            className="right"
+                                                            id="adopter"
+                                                            name="role"
+                                                            onChange={[Function]}
+                                                            type="radio"
+                                                            value="Adopter"
+                                        />
+                                        <span>
+                                                            Adopter 
+                                        </span>
+                    </label>
 </fieldset>,
                   <input
                     className="inputField"
@@ -1246,7 +625,7 @@ ShallowWrapper {
                     value=""
 />,
                   <button
-                    className="signinButton"
+                    className="signinButton btn red lighten-1"
                     name="submit"
                     type="submit"
 >
@@ -1296,44 +675,39 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
-                      <legend>
-                        Choose Your Role
-</legend>,
-                      <p>
-                        <label
-                                                htmlFor="owner"
-                        >
-                                                <input
-                                                                        className="right"
-                                                                        id="owner"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Owner"
-                                                />
-                                                <span>
-                                                                         Owner: 
-                                                </span>
-                        </label>
-</p>,
-                      <p>
-                        <label
-                                                htmlFor="adopter"
-                        >
-                                                <input
-                                                                        className="right"
-                                                                        id="adopter"
-                                                                        name="role"
-                                                                        onChange={[Function]}
-                                                                        type="radio"
-                                                                        value="Adopter"
-                                                />
-                                                <span>
-                                                                         Adopter 
-                                                </span>
-                        </label>
-</p>,
+                      <label
+                        className="owner-radio"
+                        htmlFor="owner"
+>
+                        <input
+                                                className="right"
+                                                id="owner"
+                                                name="role"
+                                                onChange={[Function]}
+                                                type="radio"
+                                                value="Owner"
+                        />
+                        <span>
+                                                Owner
+                        </span>
+</label>,
+                      <label
+                        htmlFor="adopter"
+>
+                        <input
+                                                className="right"
+                                                id="adopter"
+                                                name="role"
+                                                onChange={[Function]}
+                                                type="radio"
+                                                value="Adopter"
+                        />
+                        <span>
+                                                Adopter 
+                        </span>
+</label>,
                     ],
+                    "className": "left",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -1342,163 +716,105 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "Choose Your Role",
+                        "children": Array [
+                          <input
+                            className="right"
+                            id="owner"
+                            name="role"
+                            onChange={[Function]}
+                            type="radio"
+                            value="Owner"
+/>,
+                          <span>
+                            Owner
+</span>,
+                        ],
+                        "className": "owner-radio",
+                        "htmlFor": "owner",
                       },
                       "ref": null,
-                      "rendered": "Choose Your Role",
-                      "type": "legend",
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "right",
+                            "id": "owner",
+                            "name": "role",
+                            "onChange": [Function],
+                            "type": "radio",
+                            "value": "Owner",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Owner",
+                          },
+                          "ref": null,
+                          "rendered": "Owner",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "label",
                     },
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": <label
-                          htmlFor="owner"
->
+                        "children": Array [
                           <input
-                                                    className="right"
-                                                    id="owner"
-                                                    name="role"
-                                                    onChange={[Function]}
-                                                    type="radio"
-                                                    value="Owner"
-                          />
+                            className="right"
+                            id="adopter"
+                            name="role"
+                            onChange={[Function]}
+                            type="radio"
+                            value="Adopter"
+/>,
                           <span>
-                                                     Owner: 
-                          </span>
-</label>,
+                            Adopter 
+</span>,
+                        ],
+                        "htmlFor": "adopter",
                       },
                       "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              className="right"
-                              id="owner"
-                              name="role"
-                              onChange={[Function]}
-                              type="radio"
-                              value="Owner"
-/>,
-                            <span>
-                               Owner: 
-</span>,
-                          ],
-                          "htmlFor": "owner",
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "right",
+                            "id": "adopter",
+                            "name": "role",
+                            "onChange": [Function],
+                            "type": "radio",
+                            "value": "Adopter",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
                         },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "className": "right",
-                              "id": "owner",
-                              "name": "role",
-                              "onChange": [Function],
-                              "type": "radio",
-                              "value": "Owner",
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Adopter ",
                           },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": " Owner: ",
-                            },
-                            "ref": null,
-                            "rendered": " Owner: ",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      "type": "p",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": <label
-                          htmlFor="adopter"
->
-                          <input
-                                                    className="right"
-                                                    id="adopter"
-                                                    name="role"
-                                                    onChange={[Function]}
-                                                    type="radio"
-                                                    value="Adopter"
-                          />
-                          <span>
-                                                     Adopter 
-                          </span>
-</label>,
-                      },
-                      "ref": null,
-                      "rendered": Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": Array [
-                            <input
-                              className="right"
-                              id="adopter"
-                              name="role"
-                              onChange={[Function]}
-                              type="radio"
-                              value="Adopter"
-/>,
-                            <span>
-                               Adopter 
-</span>,
-                          ],
-                          "htmlFor": "adopter",
+                          "ref": null,
+                          "rendered": "Adopter ",
+                          "type": "span",
                         },
-                        "ref": null,
-                        "rendered": Array [
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "className": "right",
-                              "id": "adopter",
-                              "name": "role",
-                              "onChange": [Function],
-                              "type": "radio",
-                              "value": "Adopter",
-                            },
-                            "ref": null,
-                            "rendered": null,
-                            "type": "input",
-                          },
-                          Object {
-                            "instance": null,
-                            "key": undefined,
-                            "nodeType": "host",
-                            "props": Object {
-                              "children": " Adopter ",
-                            },
-                            "ref": null,
-                            "rendered": " Adopter ",
-                            "type": "span",
-                          },
-                        ],
-                        "type": "label",
-                      },
-                      "type": "p",
+                      ],
+                      "type": "label",
                     },
                   ],
                   "type": "fieldset",
@@ -1540,7 +856,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "children": "Sign In",
-                    "className": "signinButton",
+                    "className": "signinButton btn red lighten-1",
                     "name": "submit",
                     "type": "submit",
                   },
@@ -1553,6 +869,862 @@ ShallowWrapper {
             },
           ],
           "type": "section",
+        },
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col s12 m6"
+>
+            <section
+                        className="login card grey lighten-5"
+            >
+                        <h5
+                                    className="left"
+                        >
+                                    Login
+                        </h5>
+                        <form
+                                    onSubmit={[Function]}
+                        >
+                                    <input
+                                                className="inputField"
+                                                name="username"
+                                                onChange={[Function]}
+                                                placeholder="Enter Username"
+                                                type="text"
+                                                value=""
+                                    />
+                                    <input
+                                                className="inputField"
+                                                name="password"
+                                                onChange={[Function]}
+                                                placeholder="Enter Password"
+                                                type="password"
+                                                value=""
+                                    />
+                                    <button
+                                                className="loginButton btn red lighten-1"
+                                                name="submit"
+                                                type="submit"
+                                    >
+                                                Login
+                                    </button>
+                        </form>
+            </section>
+</div>,
+          <div
+            className="col s12 m6"
+>
+            <section
+                        className="sign-up card grey lighten-5"
+            >
+                        <h5
+                                    className="left"
+                        >
+                                    Sign Up
+                        </h5>
+                        <form
+                                    className="sign-up-form"
+                                    onSubmit={[Function]}
+                        >
+                                    <input
+                                                className="inputField"
+                                                name="newUsername"
+                                                onChange={[Function]}
+                                                placeholder="Choose Username"
+                                                type="text"
+                                                value=""
+                                    />
+                                    <input
+                                                className="inputField"
+                                                name="newPassword"
+                                                onChange={[Function]}
+                                                placeholder="Choose Password"
+                                                type="password"
+                                                value=""
+                                    />
+                                    <fieldset
+                                                className="left"
+                                    >
+                                                <label
+                                                            className="owner-radio"
+                                                            htmlFor="owner"
+                                                >
+                                                            <input
+                                                                        className="right"
+                                                                        id="owner"
+                                                                        name="role"
+                                                                        onChange={[Function]}
+                                                                        type="radio"
+                                                                        value="Owner"
+                                                            />
+                                                            <span>
+                                                                        Owner
+                                                            </span>
+                                                </label>
+                                                <label
+                                                            htmlFor="adopter"
+                                                >
+                                                            <input
+                                                                        className="right"
+                                                                        id="adopter"
+                                                                        name="role"
+                                                                        onChange={[Function]}
+                                                                        type="radio"
+                                                                        value="Adopter"
+                                                            />
+                                                            <span>
+                                                                        Adopter 
+                                                            </span>
+                                                </label>
+                                    </fieldset>
+                                    <input
+                                                className="inputField"
+                                                name="description"
+                                                onChange={[Function]}
+                                                placeholder="Enter Description"
+                                                value=""
+                                    />
+                                    <input
+                                                className="inputField"
+                                                name="pic"
+                                                onChange={[Function]}
+                                                placeholder="Enter URL to image"
+                                                type="url"
+                                                value=""
+                                    />
+                                    <button
+                                                className="signinButton btn red lighten-1"
+                                                name="submit"
+                                                type="submit"
+                                    >
+                                                Sign In
+                                    </button>
+                        </form>
+            </section>
+</div>,
+        ],
+        "className": "login-signup-wrapper row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <section
+              className="login card grey lighten-5"
+>
+              <h5
+                            className="left"
+              >
+                            Login
+              </h5>
+              <form
+                            onSubmit={[Function]}
+              >
+                            <input
+                                          className="inputField"
+                                          name="username"
+                                          onChange={[Function]}
+                                          placeholder="Enter Username"
+                                          type="text"
+                                          value=""
+                            />
+                            <input
+                                          className="inputField"
+                                          name="password"
+                                          onChange={[Function]}
+                                          placeholder="Enter Password"
+                                          type="password"
+                                          value=""
+                            />
+                            <button
+                                          className="loginButton btn red lighten-1"
+                                          name="submit"
+                                          type="submit"
+                            >
+                                          Login
+                            </button>
+              </form>
+</section>,
+            "className": "col s12 m6",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5
+                  className="left"
+>
+                  Login
+</h5>,
+                <form
+                  onSubmit={[Function]}
+>
+                  <input
+                                    className="inputField"
+                                    name="username"
+                                    onChange={[Function]}
+                                    placeholder="Enter Username"
+                                    type="text"
+                                    value=""
+                  />
+                  <input
+                                    className="inputField"
+                                    name="password"
+                                    onChange={[Function]}
+                                    placeholder="Enter Password"
+                                    type="password"
+                                    value=""
+                  />
+                  <button
+                                    className="loginButton btn red lighten-1"
+                                    name="submit"
+                                    type="submit"
+                  >
+                                    Login
+                  </button>
+</form>,
+              ],
+              "className": "login card grey lighten-5",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Login",
+                  "className": "left",
+                },
+                "ref": null,
+                "rendered": "Login",
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="inputField"
+                      name="username"
+                      onChange={[Function]}
+                      placeholder="Enter Username"
+                      type="text"
+                      value=""
+/>,
+                    <input
+                      className="inputField"
+                      name="password"
+                      onChange={[Function]}
+                      placeholder="Enter Password"
+                      type="password"
+                      value=""
+/>,
+                    <button
+                      className="loginButton btn red lighten-1"
+                      name="submit"
+                      type="submit"
+>
+                      Login
+</button>,
+                  ],
+                  "onSubmit": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "username",
+                      "onChange": [Function],
+                      "placeholder": "Enter Username",
+                      "type": "text",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "password",
+                      "onChange": [Function],
+                      "placeholder": "Enter Password",
+                      "type": "password",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Login",
+                      "className": "loginButton btn red lighten-1",
+                      "name": "submit",
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Login",
+                    "type": "button",
+                  },
+                ],
+                "type": "form",
+              },
+            ],
+            "type": "section",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <section
+              className="sign-up card grey lighten-5"
+>
+              <h5
+                            className="left"
+              >
+                            Sign Up
+              </h5>
+              <form
+                            className="sign-up-form"
+                            onSubmit={[Function]}
+              >
+                            <input
+                                          className="inputField"
+                                          name="newUsername"
+                                          onChange={[Function]}
+                                          placeholder="Choose Username"
+                                          type="text"
+                                          value=""
+                            />
+                            <input
+                                          className="inputField"
+                                          name="newPassword"
+                                          onChange={[Function]}
+                                          placeholder="Choose Password"
+                                          type="password"
+                                          value=""
+                            />
+                            <fieldset
+                                          className="left"
+                            >
+                                          <label
+                                                        className="owner-radio"
+                                                        htmlFor="owner"
+                                          >
+                                                        <input
+                                                                      className="right"
+                                                                      id="owner"
+                                                                      name="role"
+                                                                      onChange={[Function]}
+                                                                      type="radio"
+                                                                      value="Owner"
+                                                        />
+                                                        <span>
+                                                                      Owner
+                                                        </span>
+                                          </label>
+                                          <label
+                                                        htmlFor="adopter"
+                                          >
+                                                        <input
+                                                                      className="right"
+                                                                      id="adopter"
+                                                                      name="role"
+                                                                      onChange={[Function]}
+                                                                      type="radio"
+                                                                      value="Adopter"
+                                                        />
+                                                        <span>
+                                                                      Adopter 
+                                                        </span>
+                                          </label>
+                            </fieldset>
+                            <input
+                                          className="inputField"
+                                          name="description"
+                                          onChange={[Function]}
+                                          placeholder="Enter Description"
+                                          value=""
+                            />
+                            <input
+                                          className="inputField"
+                                          name="pic"
+                                          onChange={[Function]}
+                                          placeholder="Enter URL to image"
+                                          type="url"
+                                          value=""
+                            />
+                            <button
+                                          className="signinButton btn red lighten-1"
+                                          name="submit"
+                                          type="submit"
+                            >
+                                          Sign In
+                            </button>
+              </form>
+</section>,
+            "className": "col s12 m6",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h5
+                  className="left"
+>
+                  Sign Up
+</h5>,
+                <form
+                  className="sign-up-form"
+                  onSubmit={[Function]}
+>
+                  <input
+                                    className="inputField"
+                                    name="newUsername"
+                                    onChange={[Function]}
+                                    placeholder="Choose Username"
+                                    type="text"
+                                    value=""
+                  />
+                  <input
+                                    className="inputField"
+                                    name="newPassword"
+                                    onChange={[Function]}
+                                    placeholder="Choose Password"
+                                    type="password"
+                                    value=""
+                  />
+                  <fieldset
+                                    className="left"
+                  >
+                                    <label
+                                                      className="owner-radio"
+                                                      htmlFor="owner"
+                                    >
+                                                      <input
+                                                                        className="right"
+                                                                        id="owner"
+                                                                        name="role"
+                                                                        onChange={[Function]}
+                                                                        type="radio"
+                                                                        value="Owner"
+                                                      />
+                                                      <span>
+                                                                        Owner
+                                                      </span>
+                                    </label>
+                                    <label
+                                                      htmlFor="adopter"
+                                    >
+                                                      <input
+                                                                        className="right"
+                                                                        id="adopter"
+                                                                        name="role"
+                                                                        onChange={[Function]}
+                                                                        type="radio"
+                                                                        value="Adopter"
+                                                      />
+                                                      <span>
+                                                                        Adopter 
+                                                      </span>
+                                    </label>
+                  </fieldset>
+                  <input
+                                    className="inputField"
+                                    name="description"
+                                    onChange={[Function]}
+                                    placeholder="Enter Description"
+                                    value=""
+                  />
+                  <input
+                                    className="inputField"
+                                    name="pic"
+                                    onChange={[Function]}
+                                    placeholder="Enter URL to image"
+                                    type="url"
+                                    value=""
+                  />
+                  <button
+                                    className="signinButton btn red lighten-1"
+                                    name="submit"
+                                    type="submit"
+                  >
+                                    Sign In
+                  </button>
+</form>,
+              ],
+              "className": "sign-up card grey lighten-5",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sign Up",
+                  "className": "left",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": "h5",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="inputField"
+                      name="newUsername"
+                      onChange={[Function]}
+                      placeholder="Choose Username"
+                      type="text"
+                      value=""
+/>,
+                    <input
+                      className="inputField"
+                      name="newPassword"
+                      onChange={[Function]}
+                      placeholder="Choose Password"
+                      type="password"
+                      value=""
+/>,
+                    <fieldset
+                      className="left"
+>
+                      <label
+                                            className="owner-radio"
+                                            htmlFor="owner"
+                      >
+                                            <input
+                                                                  className="right"
+                                                                  id="owner"
+                                                                  name="role"
+                                                                  onChange={[Function]}
+                                                                  type="radio"
+                                                                  value="Owner"
+                                            />
+                                            <span>
+                                                                  Owner
+                                            </span>
+                      </label>
+                      <label
+                                            htmlFor="adopter"
+                      >
+                                            <input
+                                                                  className="right"
+                                                                  id="adopter"
+                                                                  name="role"
+                                                                  onChange={[Function]}
+                                                                  type="radio"
+                                                                  value="Adopter"
+                                            />
+                                            <span>
+                                                                  Adopter 
+                                            </span>
+                      </label>
+</fieldset>,
+                    <input
+                      className="inputField"
+                      name="description"
+                      onChange={[Function]}
+                      placeholder="Enter Description"
+                      value=""
+/>,
+                    <input
+                      className="inputField"
+                      name="pic"
+                      onChange={[Function]}
+                      placeholder="Enter URL to image"
+                      type="url"
+                      value=""
+/>,
+                    <button
+                      className="signinButton btn red lighten-1"
+                      name="submit"
+                      type="submit"
+>
+                      Sign In
+</button>,
+                  ],
+                  "className": "sign-up-form",
+                  "onSubmit": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "newUsername",
+                      "onChange": [Function],
+                      "placeholder": "Choose Username",
+                      "type": "text",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "newPassword",
+                      "onChange": [Function],
+                      "placeholder": "Choose Password",
+                      "type": "password",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <label
+                          className="owner-radio"
+                          htmlFor="owner"
+>
+                          <input
+                                                    className="right"
+                                                    id="owner"
+                                                    name="role"
+                                                    onChange={[Function]}
+                                                    type="radio"
+                                                    value="Owner"
+                          />
+                          <span>
+                                                    Owner
+                          </span>
+</label>,
+                        <label
+                          htmlFor="adopter"
+>
+                          <input
+                                                    className="right"
+                                                    id="adopter"
+                                                    name="role"
+                                                    onChange={[Function]}
+                                                    type="radio"
+                                                    value="Adopter"
+                          />
+                          <span>
+                                                    Adopter 
+                          </span>
+</label>,
+                      ],
+                      "className": "left",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <input
+                              className="right"
+                              id="owner"
+                              name="role"
+                              onChange={[Function]}
+                              type="radio"
+                              value="Owner"
+/>,
+                            <span>
+                              Owner
+</span>,
+                          ],
+                          "className": "owner-radio",
+                          "htmlFor": "owner",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "right",
+                              "id": "owner",
+                              "name": "role",
+                              "onChange": [Function],
+                              "type": "radio",
+                              "value": "Owner",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Owner",
+                            },
+                            "ref": null,
+                            "rendered": "Owner",
+                            "type": "span",
+                          },
+                        ],
+                        "type": "label",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <input
+                              className="right"
+                              id="adopter"
+                              name="role"
+                              onChange={[Function]}
+                              type="radio"
+                              value="Adopter"
+/>,
+                            <span>
+                              Adopter 
+</span>,
+                          ],
+                          "htmlFor": "adopter",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "right",
+                              "id": "adopter",
+                              "name": "role",
+                              "onChange": [Function],
+                              "type": "radio",
+                              "value": "Adopter",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Adopter ",
+                            },
+                            "ref": null,
+                            "rendered": "Adopter ",
+                            "type": "span",
+                          },
+                        ],
+                        "type": "label",
+                      },
+                    ],
+                    "type": "fieldset",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "description",
+                      "onChange": [Function],
+                      "placeholder": "Enter Description",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "inputField",
+                      "name": "pic",
+                      "onChange": [Function],
+                      "placeholder": "Enter URL to image",
+                      "type": "url",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Sign In",
+                      "className": "signinButton btn red lighten-1",
+                      "name": "submit",
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": "Sign In",
+                    "type": "button",
+                  },
+                ],
+                "type": "form",
+              },
+            ],
+            "type": "section",
+          },
+          "type": "div",
         },
       ],
       "type": "div",
