@@ -7,8 +7,8 @@ const HaveWantPetButton = () => {
   return (
     <NavLink
       to='/login'
-      className="waves-effect waves-light btn-large red lighten-1 hoverable"> Login / Signup
-    </NavLink>
+      className="waves-effect waves-light btn-large red lighten-1 hoverable home-btn valign-wrapper"> <p className="login-btn-text"> Login / Signup </p>
+     </NavLink>
   );
 };
 
