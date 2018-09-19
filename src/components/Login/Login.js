@@ -4,7 +4,11 @@ import { withRouter } from 'react-router-dom';
 // import { Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './Login.css';
-import { fetchUserData, fetchSignUp, fetchMatches } from '../../api_calls/api-calls';
+import {
+  fetchUserData,
+  fetchSignUp,
+  fetchMatches
+} from '../../api_calls/api-calls';
 import { toggleLoggedIn, storeUser, storeMatches } from '../../actions';
 
 export class Login extends Component {
@@ -24,7 +28,7 @@ export class Login extends Component {
   getMatches = async () => {
     const matches = await fetchMatches(this.props.userId);
     this.props.storeMatches(matches);
-  }
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -36,12 +40,15 @@ export class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
 
-    if (this.state.username === "") {
+    if (this.state.username === '') {
       alert('Please enter a username');
-    } else if (this.state.password === "") {
+    } else if (this.state.password === '') {
       alert('Please enter a password');
     } else {
-      const userData = await fetchUserData(this.state.username, this.state.password);
+      const userData = await fetchUserData(
+        this.state.username,
+        this.state.password
+      );
       this.props.toggleLoggedIn();
       this.props.storeUser(userData);
       this.getMatches();
@@ -52,17 +59,17 @@ export class Login extends Component {
     }
   };
 
-  handleSignUpSubmit = async (event) => {
+  handleSignUpSubmit = async event => {
     event.preventDefault();
-    if (this.state.newUsername === "") {
+    if (this.state.newUsername === '') {
       alert('Please enter a username');
-    } else if (this.state.newUserPassword === "") {
+    } else if (this.state.newPassword === '') {
       alert('Please enter a password');
-    } else if (this.state.role === "") {
+    } else if (this.state.role === '') {
       alert('Please enter a role');
-    } else if (this.state.description === "") {
+    } else if (this.state.description === '') {
       alert('Please enter a description');
-    } else if (this.state.url === "") {
+    } else if (this.state.pic === '') {
       alert('Please enter a url path to an image');
     } else {
       const newUserData = await fetchSignUp(
@@ -77,7 +84,7 @@ export class Login extends Component {
       this.props.storeUser(newUserData);
       this.props.history.push('/Pets');
     }
-  }
+  };
 
   render() {
     return (
@@ -102,6 +109,7 @@ export class Login extends Component {
               onChange={this.handleChange}
               className="inputField"
             />
+
             <button
               name="submit"
               type="submit"
@@ -116,6 +124,7 @@ export class Login extends Component {
           <form
             className="sign-up-form"
             onSubmit={this.handleSignUpSubmit}>
+
             <input
               type="text"
               placeholder="Choose Username"
@@ -132,18 +141,22 @@ export class Login extends Component {
               onChange={this.handleChange}
               className="inputField"
             />
+
             <fieldset className="left">
 
                 <label htmlFor="owner" className="owner-radio">
                   <input className="right" type="radio" id="owner" name="role" value="Owner" onChange={this.handleChange} />
                   <span>Owner</span>
+
                 </label>
 
 
                 <label htmlFor="adopter">
+
                   <input className="right" type="radio" id="adopter" name="role" value="Adopter" onChange={this.handleChange}/>
                   <span>Adopter </span>
                 </label>
+
 
 
             </fieldset>
@@ -162,6 +175,7 @@ export class Login extends Component {
               onChange={this.handleChange}
               className="inputField"
             />
+
             <button
               name="submit"
               type="submit"
@@ -171,6 +185,7 @@ export class Login extends Component {
         </section>
         </div>
       </div >
+
     );
   }
 }
@@ -193,4 +208,9 @@ Login.propTypes = {
   userId: PropTypes.number
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Login)
+);

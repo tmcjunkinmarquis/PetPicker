@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './LikeButton.css';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import { fetchLikePostPet } from '../../api_calls/api-calls';
 
-export const LikeButton = (props) => {
-  const handleLikeClick = async () => {
-    if (props.petsArray.length) {
-      await fetchLikePostPet(props.userId, props.petsArray[0].id);
-      props.updatePets();
+export class LikeButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handleLikeClick = async () => {
+    if (this.props.petsArray.length) {
+      await fetchLikePostPet(this.props.userId, this.props.petsArray[0].id);
+      this.props.updatePets();
     }
   };
 
-  return (
-    <button
-      className="waves-effect waves-light btn-large red lighten-1 nope-like-btn hoverable"
-      onClick={handleLikeClick}
-    >Like</button>
-  );
-};
+
+  render() {
+    return (
+      <button
+        className="waves-effect waves-light btn-large red lighten-1 nope-like-btn"
+        onClick={this.handleLikeClick}
+      >
+        Like
+      </button>
+    );
+  }
+}
+
 
 export const mapStateToProps = state => ({
   petsArray: state.pets.petsArray,
@@ -38,4 +49,7 @@ LikeButton.propTypes = {
   updatePets: PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LikeButton);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LikeButton);

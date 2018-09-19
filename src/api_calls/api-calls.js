@@ -67,10 +67,16 @@ const fetchMatches = async (id) => {
   }
 };
 
-const fetchPostNewMatch = async (id) => {
-  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
+const fetchPostMakeMatch = async (userId, matchId) => {
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${userId}/matches/${matchId}`;
+  const optionsObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  };
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, optionsObj);
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
@@ -101,8 +107,6 @@ const fetchSignUp = async (name, password, role, description, pic) => {
 }; 
 
 const fetchDeletePet = async (user_id, id) => {
-  // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
-
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
     method: "DELETE",
@@ -122,7 +126,6 @@ const fetchDeletePet = async (user_id, id) => {
 };
 
 const fetchLikePostPet = async (user_id, id) => {
-  // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
     method: "POST",
@@ -150,5 +153,5 @@ export {
   fetchSignUp,
   fetchDeletePet,
   fetchLikePostPet,
-  fetchPostNewMatch
+  fetchPostMakeMatch
 };
