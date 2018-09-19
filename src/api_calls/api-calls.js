@@ -67,10 +67,30 @@ const fetchMatches = async (id) => {
   }
 };
 
-const fetchPostNewMatch = async (id) => {
-  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
+// const fetchPostNewMatch = async (id) => {
+//   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
+//   try {
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//       throw Error(`${response.status}`);
+//     }
+//     return await response.json();
+//   } catch (error) {
+//     throw Error(`Network request failed. (error: ${error.message})`);
+//   }
+// };
+
+const fetchPostMakeMatch = async () => {
+  // console.log(this.props.match.id, this.props.user);
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${this.props.user}/matches/${this.props.match.id}`
+  const optionsObj = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  };
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, optionsObj);
     if (!response.ok) {
       throw Error(`${response.status}`);
     }
@@ -150,5 +170,5 @@ export {
   fetchSignUp,
   fetchDeletePet,
   fetchLikePostPet,
-  fetchPostNewMatch
+  fetchPostMakeMatch
 };
