@@ -6,7 +6,7 @@ import * as actions from "../../actions";
 
 export class NavigationBar extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   handleLogOut = () => {
@@ -25,6 +25,7 @@ export class NavigationBar extends Component {
                 className="left logo"
                 width="200"
                 height="50"
+                alt="pet"
               />
               {this.props.loggedIn && (
                 <ul className="right">

@@ -140,14 +140,12 @@ ShallowWrapper {
                     </p>
           </section>
           <p>
-                     
                     <button
                               className="btn-large red lighten-1"
                               type="submit"
                     >
                               Save Changes
                     </button>
-                     
           </p>
 </form>,
         <p>
@@ -282,14 +280,12 @@ ShallowWrapper {
               </p>
 </section>,
             <p>
-               
               <button
                             className="btn-large red lighten-1"
                             type="submit"
               >
                             Save Changes
               </button>
-               
 </p>,
           ],
           "className": "container",
@@ -883,35 +879,27 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": Array [
-                " ",
-                <button
-                  className="btn-large red lighten-1"
-                  type="submit"
+              "children": <button
+                className="btn-large red lighten-1"
+                type="submit"
 >
-                  Save Changes
+                Save Changes
 </button>,
-                " ",
-              ],
             },
             "ref": null,
-            "rendered": Array [
-              " ",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": "Save Changes",
-                  "className": "btn-large red lighten-1",
-                  "type": "submit",
-                },
-                "ref": null,
-                "rendered": "Save Changes",
-                "type": "button",
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Save Changes",
+                "className": "btn-large red lighten-1",
+                "type": "submit",
               },
-              " ",
-            ],
+              "ref": null,
+              "rendered": "Save Changes",
+              "type": "button",
+            },
             "type": "p",
           },
         ],
@@ -1072,14 +1060,12 @@ ShallowWrapper {
                         </p>
             </section>
             <p>
-                         
                         <button
                                     className="btn-large red lighten-1"
                                     type="submit"
                         >
                                     Save Changes
                         </button>
-                         
             </p>
 </form>,
           <p>
@@ -1214,14 +1200,12 @@ ShallowWrapper {
                 </p>
 </section>,
               <p>
-                 
                 <button
                                 className="btn-large red lighten-1"
                                 type="submit"
                 >
                                 Save Changes
                 </button>
-                 
 </p>,
             ],
             "className": "container",
@@ -1815,35 +1799,27 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  " ",
-                  <button
-                    className="btn-large red lighten-1"
-                    type="submit"
+                "children": <button
+                  className="btn-large red lighten-1"
+                  type="submit"
 >
-                    Save Changes
+                  Save Changes
 </button>,
-                  " ",
-                ],
               },
               "ref": null,
-              "rendered": Array [
-                " ",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": "Save Changes",
-                    "className": "btn-large red lighten-1",
-                    "type": "submit",
-                  },
-                  "ref": null,
-                  "rendered": "Save Changes",
-                  "type": "button",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Save Changes",
+                  "className": "btn-large red lighten-1",
+                  "type": "submit",
                 },
-                " ",
-              ],
+                "ref": null,
+                "rendered": "Save Changes",
+                "type": "button",
+              },
               "type": "p",
             },
           ],

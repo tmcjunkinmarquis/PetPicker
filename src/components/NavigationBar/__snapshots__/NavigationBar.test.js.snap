@@ -30,6 +30,7 @@ ShallowWrapper {
                         className="Nav-wrapper"
                 >
                         <img
+                                alt="pet"
                                 className="left logo"
                                 height="50"
                                 src="/PetPicker.png"
@@ -53,6 +54,7 @@ ShallowWrapper {
                     className="Nav-wrapper"
           >
                     <img
+                              alt="pet"
                               className="left logo"
                               height="50"
                               src="/PetPicker.png"
@@ -72,6 +74,7 @@ ShallowWrapper {
             className="Nav-wrapper"
 >
             <img
+                        alt="pet"
                         className="left logo"
                         height="50"
                         src="/PetPicker.png"
@@ -88,6 +91,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <img
+                alt="pet"
                 className="left logo"
                 height="50"
                 src="/PetPicker.png"
@@ -104,6 +108,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "alt": "pet",
                 "className": "left logo",
                 "height": "50",
                 "src": "/PetPicker.png",
@@ -139,6 +144,7 @@ ShallowWrapper {
                               className="Nav-wrapper"
                     >
                               <img
+                                        alt="pet"
                                         className="left logo"
                                         height="50"
                                         src="/PetPicker.png"
@@ -162,6 +168,7 @@ ShallowWrapper {
                         className="Nav-wrapper"
             >
                         <img
+                                    alt="pet"
                                     className="left logo"
                                     height="50"
                                     src="/PetPicker.png"
@@ -181,6 +188,7 @@ ShallowWrapper {
               className="Nav-wrapper"
 >
               <img
+                            alt="pet"
                             className="left logo"
                             height="50"
                             src="/PetPicker.png"
@@ -197,6 +205,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <img
+                  alt="pet"
                   className="left logo"
                   height="50"
                   src="/PetPicker.png"
@@ -213,6 +222,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "alt": "pet",
                   "className": "left logo",
                   "height": "50",
                   "src": "/PetPicker.png",

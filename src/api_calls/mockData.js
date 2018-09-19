@@ -93,4 +93,4 @@ export const mockSignUpData = {
   password_digest: "$2a$10$5Zm81iRt83CJ.Z4cp79BL.esDeYk8mLpsTzc3BhOA72...",
   pic: "https://avatars2.githubusercontent.com/u/25600007?...",
   description: "I absolutely love pups!"
-}
+};

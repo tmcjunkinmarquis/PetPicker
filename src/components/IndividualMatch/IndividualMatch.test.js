@@ -3,6 +3,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { IndividualMatch } from "./IndividualMatch";
+// eslint-disable-next-line
 import { fetchPostMakeMatch } from "../../api_calls/api-calls";
 jest.mock("../../api_calls/api-calls.js");
 
