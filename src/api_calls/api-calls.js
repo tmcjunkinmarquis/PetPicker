@@ -80,9 +80,9 @@ const fetchMatches = async (id) => {
 //   }
 // };
 
-const fetchPostMakeMatch = async () => {
+const fetchPostMakeMatch = async (userId, matchId) => {
   // console.log(this.props.match.id, this.props.user);
-  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${this.props.user}/matches/${this.props.match.id}`
+  const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${userId}/matches/${matchId}`;
   const optionsObj = {
     method: "POST",
     headers: {
