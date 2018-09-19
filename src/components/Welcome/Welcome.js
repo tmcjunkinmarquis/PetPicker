@@ -30,11 +30,7 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome to Pet Picker!</h1>
-
-        <div>{this.makePet(this.state.pet)}</div>
-
+      <div className='welcome valign-wrapper'>
         <div className="nope-or-like">
           <HaveWantPetButton />
         </div>
