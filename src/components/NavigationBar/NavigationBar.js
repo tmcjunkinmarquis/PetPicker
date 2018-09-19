@@ -16,11 +16,12 @@ export class NavigationBar extends Component {
 
   render() {
     return (
-      <div className="navbar-fixed ">
-        <nav>
+      <div className="navbar-fixed">
+        <nav className="red lighten-1">
           <div className="container">
-            <div className="Nav-wrapper red lighten-1">
-              <h3 className="left nav-title-pp">Pet Picker</h3>
+            <div className="Nav-wrapper">
+
+              <img src='/PetPicker.png' className="left logo" width="200" height="50"></img>
               {this.props.loggedIn &&
               <ul className="right">
                 <li><NavLink to='/profile' className='nav'>Profile</NavLink></li>
