@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockUserData, mockPetData, mockWelcomePetData, mockMatchDataForAdopter  } from './mockData';
+import { mockUserData, mockPetData, mockWelcomePetData, mockMatchDataForAdopter, mockMatchDataForOwner  } from './mockData';
 import {
   fetchUserData,
   fetchPets,
@@ -162,7 +162,7 @@ describe('fetchWelcomePet', () => {
   });
 });
 
-describe('fetchMatches', () => {
+describe('fetchMatches for adopter', () => {
   jest.resetAllMocks();
 
   beforeEach(() => {
@@ -208,5 +208,32 @@ describe('fetchMatches', () => {
     const expected = Error('Network request failed. (error: mock error)');
 
     await expect(fetchMatches()).rejects.toEqual(expected);
+  });
+});
+
+describe('fetchMatches for owner', () => {
+  jest.resetAllMocks();
+
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve(mockMatchDataForOwner)
+    }));
+  });
+
+  it('should call fetch with the correct params for an adopter', async () => {
+    const id = 1;
+    const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
+
+    await fetchMatches(id);
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  });
+
+  it('should return correct data', async () => {
+    const expected = mockMatchDataForOwner;
+    const result = await fetchMatches();
+
+    expect(result).toEqual(expected);
   });
 });
