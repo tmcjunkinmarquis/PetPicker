@@ -1,36 +1,51 @@
-import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import * as actions from '../../actions';
+import React, { Component } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import * as actions from "../../actions";
 
 export class MobileNav extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.sideNav = React.createRef();
   }
 
   handleLogOut = () => {
     this.props.resetStore();
     localStorage.clear();
-  }
+  };
   componentDidMount = () => {
-    const M = window.M;
-    console.log(M);
-    console.log(this.sideNav.current);
-    M.Sidenav.init(this.sideNav.current, {});
-  }
+    const Mobile = window.M;
+    Mobile.Sidenav.init(this.sideNav.current, {});
+  };
 
   render() {
     return (
       <div>
-      {this.props.loggedIn &&
-        <ul className="sidnav" id="mobile-nav">
-          <li><NavLink to='/profile' className='nav'>Profile</NavLink></li>
-          <li><NavLink to='/matches' className='nav'>Matches</NavLink></li>
-          <li><NavLink to='/pets' className='nav'>Pets</NavLink></li>
-          <li><NavLink exact to='/' className='nav' onClick={this.handleLogOut}>Logout</NavLink></li>
-        </ul>}
+        {this.props.loggedIn && (
+          <ul className="sidnav" id="mobile-nav">
+            <li>
+              <NavLink to="/profile" className="nav">
+                Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/matches" className="nav">
+                Matches
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/pets" className="nav">
+                Pets
+              </NavLink>
+            </li>
+            <li>
+              <NavLink exact to="/" className="nav" onClick={this.handleLogOut}>
+                Logout
+              </NavLink>
+            </li>
+          </ul>
+        )}
       </div>
     );
   }
@@ -50,5 +65,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(MobileNav)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(MobileNav)
 );

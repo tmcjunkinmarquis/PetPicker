@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import './IndividualMatch.css';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchPostMakeMatch } from '../../api_calls/api-calls';
-
+import React, { Component } from "react";
+import "./IndividualMatch.css";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { fetchPostMakeMatch } from "../../api_calls/api-calls";
 
 export class IndividualMatch extends Component {
   constructor(props) {
@@ -14,20 +13,19 @@ export class IndividualMatch extends Component {
   render() {
     const { description, pic, id, name } = this.props.match;
     return (
-      <li className='collection-item'>
-        <img
-          className="circle avatar-pic left"
-          src={pic} alt=""
-        />
+      <li className="collection-item">
+        <img className="circle avatar-pic left" src={pic} alt="" />
 
-        {this.props.match.owner ?
+        {this.props.match.owner ? (
           <a
             onClick={fetchPostMakeMatch(this.props.user, id)}
             className="title left pet-title"
-          >{name}
+          >
+            {name}
           </a>
-          :
-          <span className="title left pet-title">{name}</span>}
+        ) : (
+          <span className="title left pet-title">{name}</span>
+        )}
         <br />
         <p className="left-align">{description}</p>
       </li>
@@ -42,7 +40,7 @@ IndividualMatch.propTypes = {
   user: PropTypes.number
 };
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = state => ({
   user: state.user.id
 });
 

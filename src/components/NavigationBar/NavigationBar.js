@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import * as actions from '../../actions';
+import React, { Component } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import * as actions from "../../actions";
 
 export class NavigationBar extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   handleLogOut = () => {
     this.props.resetStore();
     localStorage.clear();
-  }
+  };
 
   render() {
     return (
@@ -20,18 +20,45 @@ export class NavigationBar extends Component {
         <nav className="red lighten-1">
           <div className="container">
             <div className="Nav-wrapper">
-
-              <img src='/PetPicker.png' className="left logo" width="200" height="50"></img>
-              {this.props.loggedIn &&
-              <ul className="right">
-                <li><NavLink to='/profile' className='nav'>Profile</NavLink></li>
-                <li><NavLink to='/matches' className='nav'>Matches</NavLink></li>
-                <li><NavLink to='/pets' className='nav'>Pets</NavLink></li>
-                <li><NavLink exact to='/' className='nav' onClick={this.handleLogOut}>Logout</NavLink></li>
-              </ul>}
+              <img
+                src="/PetPicker.png"
+                className="left logo"
+                width="200"
+                height="50"
+                alt="pet"
+              />
+              {this.props.loggedIn && (
+                <ul className="right">
+                  <li>
+                    <NavLink to="/profile" className="nav">
+                      Profile
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/matches" className="nav">
+                      Matches
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/pets" className="nav">
+                      Pets
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      exact
+                      to="/"
+                      className="nav"
+                      onClick={this.handleLogOut}
+                    >
+                      Logout
+                    </NavLink>
+                  </li>
+                </ul>
+              )}
             </div>
           </div>
-        </nav >
+        </nav>
       </div>
     );
   }
@@ -51,5 +78,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(NavigationBar)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NavigationBar)
 );
