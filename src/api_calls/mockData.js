@@ -28,3 +28,22 @@ export const mockWelcomePetData = {
   user_id: 4
 };
 
+export const mockMatchData = [
+  {
+    "id": 51,
+    "name": "Mack",
+    "description": "Poops a lot",
+    "pic": "https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development-460x306.jpg"
+  },
+  {
+    "id": 52, 
+    "name":  "Felton", 
+    "description": "Poops a lot", 
+    "pic": "https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development-460x306.jpg"
+  },
+  { "id": 53, 
+    "name": "Tana", 
+    "description": "Poops a lot", 
+    "pic": "https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development-460x306.jpg" }
+];
+
