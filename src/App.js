@@ -14,8 +14,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavigationBar />
+        <Route exact path='/' component={Welcome} />
         <div className="container">
-          <Route exact path='/' component={Welcome} />
           <Route path='/profile' component={Profile} />
           <Route path='/matches' component={Matches} />
           <Route path='/pets' component={Pets} />
