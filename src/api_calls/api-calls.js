@@ -126,7 +126,6 @@ const fetchDeletePet = async (user_id, id) => {
 };
 
 const fetchLikePostPet = async (user_id, id) => {
-  // https://pet-picker-api.herokuapp.com/api/v1/users/2/connections?pet_id=10
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
     method: "POST",
