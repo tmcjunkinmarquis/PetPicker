@@ -338,7 +338,7 @@ describe('fetchSignUp', () => {
     }));
   });
 
-  it.only('should be called with correct params', async () => {
+  it('should be called with correct params', async () => {
     await fetchSignUp(
       mockUser.name,
       mockUser.password,

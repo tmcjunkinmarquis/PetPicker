@@ -107,8 +107,6 @@ const fetchSignUp = async (name, password, role, description, pic) => {
 }; 
 
 const fetchDeletePet = async (user_id, id) => {
- 
-
   const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${user_id}/connections?pet_id=${id}`;
   const optionsObj = {
     method: "DELETE",
