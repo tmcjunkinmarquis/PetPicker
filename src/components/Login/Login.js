@@ -83,8 +83,8 @@ export class Login extends Component {
     return (
       <div className="login-signup-wrapper row">
       <div className="col s12 m6">
-        <section className="login card">
-          <h3 className="left">Login</h3>
+        <section className="login card grey lighten-5">
+          <h5 className="left">Login</h5>
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -111,8 +111,8 @@ export class Login extends Component {
         </section>
         </div>
         <div className="col s12 m6">
-        <section className="sign-up card">
-          <h3 className="left">Sign Up</h3>
+        <section className="sign-up card grey lighten-5">
+          <h5 className="left">Sign Up</h5>
           <form
             className="sign-up-form"
             onSubmit={this.handleSignUpSubmit}>
