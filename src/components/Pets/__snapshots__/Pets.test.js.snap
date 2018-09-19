@@ -43,7 +43,7 @@ ShallowWrapper {
                 className="nope-or-like"
         >
                 <Connect(NopeButton) />
-                <Connect(Component) />
+                <Connect(LikeButton) />
         </div>
         <p
                 className="flow-text"
@@ -67,7 +67,7 @@ ShallowWrapper {
             className="nope-or-like"
 >
             <Connect(NopeButton) />
-            <Connect(Component) />
+            <Connect(LikeButton) />
 </div>,
           <p
             className="flow-text"
@@ -107,7 +107,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Connect(NopeButton) />,
-              <Connect(Component) />,
+              <Connect(LikeButton) />,
             ],
             "className": "nope-or-like",
           },
@@ -168,7 +168,7 @@ ShallowWrapper {
                     className="nope-or-like"
           >
                     <Connect(NopeButton) />
-                    <Connect(Component) />
+                    <Connect(LikeButton) />
           </div>
           <p
                     className="flow-text"
@@ -192,7 +192,7 @@ ShallowWrapper {
               className="nope-or-like"
 >
               <Connect(NopeButton) />
-              <Connect(Component) />
+              <Connect(LikeButton) />
 </div>,
             <p
               className="flow-text"
@@ -232,7 +232,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Connect(NopeButton) />,
-                <Connect(Component) />,
+                <Connect(LikeButton) />,
               ],
               "className": "nope-or-like",
             },

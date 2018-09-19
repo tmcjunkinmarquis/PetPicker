@@ -79,7 +79,7 @@ export const mockMatchDataForOwner = [
     "owner": true }
 ];
 
-export const mockMakeMatchData = { message: 'You’ve created a match!'}
+export const mockMakeMatchData = { message: 'You’ve created a match!'};
 
 export const mockSignUpData = {
   id: 2,

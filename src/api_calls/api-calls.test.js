@@ -1,12 +1,13 @@
 import React from 'react';
-import { 
-  mockUserData, 
-  mockPetData, 
-  mockWelcomePetData, 
-  mockMatchDataForAdopter, 
+import {
+  mockUserData,
+  mockPetData,
+  mockWelcomePetData,
+  mockMatchDataForAdopter,
   mockMatchDataForOwner,
   mockMakeMatchData,
-  mockSignUpData  } from './mockData';
+  mockSignUpData
+} from './mockData';
 import {
   fetchUserData,
   fetchPets,
@@ -22,9 +23,8 @@ import {
 
 
 describe('fetchUserData', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockUserData)
@@ -53,7 +53,7 @@ describe('fetchUserData', () => {
       Promise.resolve({
         status: 500,
         ok: false,
-        json: () => Promise.resolve({ data: 'mock data' })
+        json: () => Promise.resolve({ mockUserData: 'mock data' })
       })
     );
 
@@ -72,9 +72,8 @@ describe('fetchUserData', () => {
 });
 
 describe('fetchPets', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockPetData)
@@ -103,7 +102,7 @@ describe('fetchPets', () => {
       Promise.resolve({
         status: 500,
         ok: false,
-        json: () => Promise.resolve({ data: 'mock data' })
+        json: () => Promise.resolve({ mockUserData: 'mock data' })
       })
     );
 
@@ -122,9 +121,8 @@ describe('fetchPets', () => {
 });
 
 describe('fetchWelcomePet', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockWelcomePetData)
@@ -141,7 +139,7 @@ describe('fetchWelcomePet', () => {
 
   it('should return correct data', async () => {
     const expected = mockWelcomePetData;
-    
+
     const result = await fetchWelcomePet();
 
     expect(result).toEqual(expected);
@@ -152,7 +150,7 @@ describe('fetchWelcomePet', () => {
       Promise.resolve({
         status: 500,
         ok: false,
-        json: () => Promise.resolve({ data: 'mock data' })
+        json: () => Promise.resolve({ mockUserData: 'mock data' })
       })
     );
 
@@ -171,9 +169,8 @@ describe('fetchWelcomePet', () => {
 });
 
 describe('fetchMatches for adopter', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockMatchDataForAdopter)
@@ -201,7 +198,7 @@ describe('fetchMatches for adopter', () => {
       Promise.resolve({
         status: 500,
         ok: false,
-        json: () => Promise.resolve({ data: 'mock data' })
+        json: () => Promise.resolve({ mockUserData: 'mock data' })
       })
     );
 
@@ -220,9 +217,8 @@ describe('fetchMatches for adopter', () => {
 });
 
 describe('fetchMatches for owner', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockMatchDataForOwner)
@@ -247,9 +243,8 @@ describe('fetchMatches for owner', () => {
 });
 
 describe('fetchPostMakeMatch', () => {
-  jest.resetAllMocks();
-
   beforeEach(() => {
+    jest.resetAllMocks();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockMakeMatchData)
@@ -260,13 +255,21 @@ describe('fetchPostMakeMatch', () => {
     const userId = 1;
     const matchId = 1;
     const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${userId}/matches/${matchId}`;
+    const mockOptionsObj = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    }
 
     await fetchPostMakeMatch(userId, matchId);
 
-    expect(window.fetch).toHaveBeenCalledWith(url);
+    expect(window.fetch).toHaveBeenCalledWith(url, mockOptionsObj);
   });
 
   it('should return correct data', async () => {
+    const userId = 1;
+    const matchId = 1;
     const expected = mockMakeMatchData;
     const result = await fetchPostMakeMatch(userId, matchId);
 
@@ -278,7 +281,7 @@ describe('fetchPostMakeMatch', () => {
       Promise.resolve({
         status: 500,
         ok: false,
-        json: () => Promise.resolve({ data: 'mock data' })
+        json: () => Promise.resolve({ mockUserData: 'mock data' })
       })
     );
 
@@ -300,43 +303,47 @@ describe('fetchSignUp', () => {
   let url;
   let mockOptionsObj;
   let mockUser;
- 
+
   beforeEach(() => {
-    mockUser = { 
-      name: "Theresa", 
-      password: "123", 
-      role: 'adopter', 
-      description:"I absolutely love pups!", 
-      pic:"https://avatars2.githubusercontent.com/u/25600007?..." 
+    jest.resetAllMocks();
+    mockUser = {
+      name: "Theresa",
+      password: "123",
+      role: 'adopter',
+      description: "I absolutely love pups!",
+      pic: "https://avatars2.githubusercontent.com/u/25600007?..."
     };
     url = 'https://pet-picker-api.herokuapp.com/api/v1/users';
-    
+
     mockOptionsObj = {
       method: 'POST',
       headers: {
         "Content-Type": "application/json; charset=utf-8"
-      }, 
+      },
       body: JSON.stringify({
-        user: { name: 'Theresa', 
-          password: '123', 
-          role: 'adopter', 
-          description: 'I absolutely love pups!', 
-          pic: 'https://avatars2.githubusercontent.com/u/25600007?...' 
-        }} )
+        user: {
+          name: 'Theresa',
+          password: '123',
+          role: 'adopter',
+          description: 'I absolutely love pups!',
+          pic: 'https://avatars2.githubusercontent.com/u/25600007?...'
+        }
+      })
     };
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
       status: 200,
       json: () => Promise.resolve(mockSignUpData)
     }));
   });
 
-  it('should be called with correct params', async () => {
+  it.only('should be called with correct params', async () => {
     await fetchSignUp(
-      mockUser.name, 
-      mockUser.password, 
-      mockUser.role, 
-      mockUser.description, 
+      mockUser.name,
+      mockUser.password,
+      mockUser.role,
+      mockUser.description,
       mockUser.pic);
 
     expect(window.fetch).toHaveBeenCalledWith(url, mockOptionsObj);
