@@ -28,7 +28,7 @@ export const mockWelcomePetData = {
   user_id: 4
 };
 
-export const mockMatchData = [
+export const mockMatchDataForAdopter = [
   {
     "id": 51,
     "name": "Mack",
@@ -45,5 +45,37 @@ export const mockMatchData = [
     "name": "Tana", 
     "description": "Poops a lot", 
     "pic": "https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development-460x306.jpg" }
+];
+
+export const mockMatchDataForOwner = [
+  {
+    "id": 9,
+    "name": "Barney Gumble likes Kemberly",
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Placeholder_female_superhero_c.png",
+    "description": "...",
+    "owner": true
+  },
+  {
+    "id": 10,
+    "name": "Barney Gumble likes Allyn",
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Placeholder_female_superhero_c.png",
+    "description": "...",
+    "owner": true
+  },
+  { "id": 11, 
+    "name": "Barney Gumble likes Page", 
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Placeholder_female_superhero_c.png", 
+    "description": "...", 
+    "owner": true },
+  { "id": 14, 
+    "name": "Leopold likes Lorriane", 
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Placeholder_female_superhero_c.png", 
+    "description": "...", 
+    "owner": true },
+  { "id": 15, 
+    "name": "Maude Flanders likes Thi", 
+    "pic": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Placeholder_female_superhero_c.png", 
+    "description": "...", 
+    "owner": true }
 ];
 

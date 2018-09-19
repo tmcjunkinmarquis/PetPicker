@@ -1,5 +1,5 @@
 import React from 'react';
-import { mockUserData, mockPetData, mockWelcomePetData, mockMatchData } from './mockData';
+import { mockUserData, mockPetData, mockWelcomePetData, mockMatchDataForAdopter  } from './mockData';
 import {
   fetchUserData,
   fetchPets,
@@ -168,11 +168,11 @@ describe('fetchMatches', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve(mockMatchData)
+      json: () => Promise.resolve(mockMatchDataForAdopter)
     }));
   });
 
-  it('should call fetch with the correct params', async () => {
+  it('should call fetch with the correct params for an adopter', async () => {
     const id = 1;
     const url = `https://pet-picker-api.herokuapp.com/api/v1/users/${id}/matches`;
 
@@ -182,7 +182,7 @@ describe('fetchMatches', () => {
   });
 
   it('should return correct data', async () => {
-    const expected = mockMatchData;
+    const expected = mockMatchDataForAdopter;
     const result = await fetchMatches();
 
     expect(result).toEqual(expected);
