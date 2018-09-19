@@ -18,10 +18,11 @@ export class NopeButton extends Component {
     }
   };
 
+
   render() {
     return (
       <button
-        className="waves-effect waves-light btn-large red lighten-1 nope-like-btn"
+        className="waves-effect waves-light btn-large red lighten-1 nope-like-btn hoverable"
         onClick={this.handleNopeClick}
       >
         Nope
@@ -29,6 +30,7 @@ export class NopeButton extends Component {
     );
   }
 }
+
 
 export const mapStateToProps = state => ({
   petsArray: state.pets.petsArray,

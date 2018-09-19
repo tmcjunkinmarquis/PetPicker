@@ -18,6 +18,7 @@ export class LikeButton extends Component {
     }
   };
 
+
   render() {
     return (
       <button
@@ -29,6 +30,7 @@ export class LikeButton extends Component {
     );
   }
 }
+
 
 export const mapStateToProps = state => ({
   petsArray: state.pets.petsArray,
